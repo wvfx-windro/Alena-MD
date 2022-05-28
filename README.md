@@ -2,4 +2,4 @@
 
 * [`ALENA QR SCANNER`](https://replit.com/@Afx-Abu/ALENA-MD-QR?v=1)
 
-* [`DEPLOY TO HEROKO`](https://heroku.com/deploy/https://github.com/Afx-Abu/Alena-MD)
+* [`DEPLOY TO HEROKO`](https://heroku.com/deploy?template=https://github.com/Afx-Abu/Alena-MD)
