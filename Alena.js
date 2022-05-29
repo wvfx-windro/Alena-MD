@@ -264,7 +264,7 @@ const reply = (teks) => {
 			}
 			for (let anju of vien){
 				if (budy === anju){
-					result = fs.readFileSync(`./media/vn/${anju}.mp3`)
+					result = fs.readFileSync(`vn/${anju}.mp3`)
 					Alena.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 					}
 			}
