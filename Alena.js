@@ -248,9 +248,9 @@ const reply = (teks) => {
         let gclink = (`https://chat.whatsapp.com/`+await Alena.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
-        if (isgclink) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Sent This Group Link❤️`)
-        if (isAdmins) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are An Admin Of The Group❤️`)
-        if (isCreator) return reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh🐦`)
+        if (isgclink) return reply(`𝙶𝚁𝙾𝚄𝙿 𝙸𝚂 𝙰𝙲𝚃𝙸𝚅𝙰𝚃𝙴𝙳 𝙰𝙽𝚃𝙸 𝙻𝙸𝙽𝙺 𝚃𝙷𝙴𝙽 𝙳𝙾𝙽𝚃 𝚂𝙴𝙽𝙳 𝙰𝙽𝙾𝚃𝙷𝙴𝚁 𝙶𝚁𝙾𝚄𝙿 𝙻𝙸𝙽𝙺❤️`)
+        if (isAdmins) return reply(`𝙶𝚁𝙾𝚄𝙿 𝙸𝚂 𝙰𝙲𝚃𝙸𝚅𝙰𝚃𝙴𝙳 𝙰𝙽𝚃𝙸 𝙻𝙸𝙽𝙺 𝚃𝙷𝙴𝙽 𝙳𝙾𝙽𝚃 𝚂𝙴𝙽𝙳 𝙰𝙽𝙾𝚃𝙷𝙴𝚁 𝙶𝚁𝙾𝚄𝙿 𝙻𝙸𝙽𝙺❤️`)
+        if (isCreator) return reply(`𝙶𝚁𝙾𝚄𝙿 𝙸𝚂 𝙰𝙲𝚃𝙸𝚅𝙰𝚃𝙴𝙳 𝙰𝙽𝚃𝙸 𝙻𝙸𝙽𝙺 𝚃𝙷𝙴𝙽 𝙳𝙾𝙽𝚃 𝚂𝙴𝙽𝙳 𝙰𝙽𝙾𝚃𝙷𝙴𝚁 𝙶𝚁𝙾𝚄𝙿 𝙻𝙸𝙽𝙺`)
         Alena.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
@@ -577,7 +577,7 @@ if (q.includes('--help')) return reply(examkosong)
   if (!isInventoriBuruan){ addInventoriBuruan(m.sender) }
      
      var Alena = await getBuffer(picak+`User's Inventory`)
-     let teksehmazeh = `_[ 👩🏻‍💼INFO USER👨🏻‍💼 ]_\n\n`
+     let teksehmazeh = `_[ 𝑰𝑵𝑭𝑶 𝑼𝑺𝑬𝑹 ]_\n\n`
      teksehmazeh += `*❤️Your Blood* : ${getDarah(m.sender)}\n`
      teksehmazeh += `*◻️️Your Iron* : ${getBesi(m.sender)}\n`
      teksehmazeh += `*🌟Your Gold* : ${getEmas(m.sender)}\n`
@@ -597,7 +597,7 @@ if (q.includes('--help')) return reply(examkosong)
   break
         case 'userlimit': 
 {      
-   let txt = `「 *ALL LIMIT USER* 」\n\n`
+   let txt = `「 *𝑨𝑳𝑳 𝑳𝑰𝑴𝑰𝑻 𝑼𝑺𝑬𝑹* 」\n\n`
      for (let i of _limit){
      txt += `➸ *ID :* @${i.id.split("@")[0]}\n➸ *Limit* : ${i.limit}\n`
      }
@@ -606,7 +606,7 @@ if (q.includes('--help')) return reply(examkosong)
  break
  case 'leaderboard':
 {      
-   let txt = `「 *LEADERBOARD* 」\n\n`
+   let txt = `「 *𝑳𝑬𝑨𝑫𝑬𝑹 𝑩𝑶𝑨𝑹𝑿* 」\n\n`
      for (let i of _buruan){
      txt += `➸ *ID :* ${i.id}\n`
      txt += `*🐟Fish* : ${i.ikan}\n`
@@ -1144,7 +1144,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                 }
             }
             break
-            case 'mysoulmate': {
+            case 'mach': {
             if (!m.isGroup) return replay(`${mess.group}`)
             let member = participants.map(u => u.id)
             let me = m.sender
@@ -1510,8 +1510,8 @@ let teks = `╚»˙·٠•●♥ ᴛᴀɢ ᴀʟʟ ♥●•٠·˙«╝
 
 *${prefix}delvote* - To Delete Vote Session`
 let buttonsVote = [
-  {buttonId: `${prefix}upvote`, buttonText: {displayText: 'Upvote'}, type: 1},
-  {buttonId: `${prefix}devote`, buttonText: {displayText: 'Devote'}, type: 1}
+  {buttonId: `${prefix}upvote`, buttonText: {displayText: 'ᴜᴘᴠᴏᴛᴇ'}, type: 1},
+  {buttonId: `${prefix}devote`, buttonText: {displayText: 'ᴅᴇᴠᴏᴛᴇ'}, type: 1}
 ]
 
             let buttonMessageVote = {
@@ -1671,8 +1671,8 @@ break
                 await Alena.groupSettingUpdate(m.chat, 'locked').then((res) => reply(`Successfully Closed Edit Group Info`)).catch((err) => reply(jsonformat(err)))
              } else {
              let buttons = [
-                        { buttonId: 'editinfo open', buttonText: { displayText: 'Open' }, type: 1 },
-                        { buttonId: 'editinfo close', buttonText: { displayText: 'Close' }, type: 1 }
+                        { buttonId: 'editinfo open', buttonText: { displayText: 'ᴏᴘᴇɴ' }, type: 1 },
+                        { buttonId: 'editinfo close', buttonText: { displayText: 'ᴄʟᴏsᴇ' }, type: 1 }
                     ]
                     await Alena.sendButtonText(m.chat, buttons, `Mode Edit Info`, Alena.user.name, m)
 
@@ -1693,8 +1693,8 @@ break
                 reply(`Antilink Inactive !`)
                 } else {
                  let buttons = [
-                        { buttonId: 'antilink on', buttonText: { displayText: 'On' }, type: 1 },
-                        { buttonId: 'antilink off', buttonText: { displayText: 'Off' }, type: 1 }
+                        { buttonId: 'antilink on', buttonText: { displayText: 'ᴏɴ' }, type: 1 },
+                        { buttonId: 'antilink off', buttonText: { displayText: 'ᴏғғ' }, type: 1 }
                     ]
                     await Alena.sendButtonText(m.chat, buttons, `Antilink Mode`, Alena.user.name, m)
                 }
@@ -1714,8 +1714,8 @@ break
                 reply(`${Alena.user.name} Has Been Unmuted In This Group!`)
                 } else {
                  let buttons = [
-                        { buttonId: 'mute on', buttonText: { displayText: 'On' }, type: 1 },
-                        { buttonId: 'mute off', buttonText: { displayText: 'Off' }, type: 1 }
+                        { buttonId: 'mute on', buttonText: { displayText: 'ᴏɴ' }, type: 1 },
+                        { buttonId: 'mute off', buttonText: { displayText: 'ᴏғғ' }, type: 1 }
                     ]
                     await Alena.sendButtonText(m.chat, buttons, `Mute Bot`, Alena.user.name, m)
                 }
@@ -1757,22 +1757,22 @@ break
                     await sleep(1500)
                     let btn = [{
                                 urlButton: {
-                                    displayText: 'Script🔖',
+                                    displayText: 'ɢɪᴛʜᴜʙ🔖',
                                     url: `${sc}`
                                 }
                             }, {
                                 urlButton: {
-                                    displayText: 'YouTube📍',
+                                    displayText: 'ʏᴏᴜᴛʜᴜʙᴇ📍',
                                     url: `${myweb}`
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '🎀Menu🎀',
+                                    displayText: 'ᴍᴇɴᴜ🎀',
                                     id: 'menu'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: 'ᴏᴡɴᴇʀ👤',
                                     id: 'owner'
                                 }
                             }]
@@ -2034,7 +2034,7 @@ break
                 let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
                 let no = 1
                 for (let i of search.all) {
-                    teks += `🐦 No : ${no++}\n🐦 Type : ${i.type}\n🐦 Video ID : ${i.videoId}\n🐦 Title : ${i.title}\n🐦 Views : ${i.views}\n🐦 Duration : ${i.timestamp}\n🐦 Uploaded On : ${i.ago}\n🐦 Author : ${i.author.name}\n🐦 Url : ${i.url}\n\n─────────────────\n\n`
+                    teks += `🐦 ɴᴏ : ${no++}\n🐦 ᴛʏᴘᴇ : ${i.type}\n🐦 ᴠɪᴅᴇᴏ ʟɪɴᴋ : ${i.videoId}\n🐦 ᴛɪᴛʟᴇ : ${i.title}\n🐦 ᴠɪᴇᴡs : ${i.views}\n🐦 sɪᴢᴇ : ${i.timestamp}\n🐦 ᴠɪᴅᴇᴏ ᴜʟᴏᴀᴅᴇᴅ ᴅᴀᴛᴇ : ${i.ago}\n🐦 ᴀᴜᴛʜᴏʀ : ${i.author.name}\n🐦 ᴜʀʟ : ${i.url}\n\n─────────────────\n\n`
                 }
                 Alena.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
             }
@@ -2087,16 +2087,16 @@ break
                 let buttonMessage = {
                     image: { url: anu.thumbnail },
                     caption: `
-🐦 Title : ${anu.title}
-🐦 Ext : Search
-🐦 ID : ${anu.videoId}
-🐦 Duration : ${anu.timestamp}
-🐦 Viewes : ${anu.views}
-🐦 Uploaded On : ${anu.ago}
-🐦 Author : ${anu.author.name}
-🐦 Channel : ${anu.author.url}
-🐦 Description : ${anu.description}
-🐦 Url : ${anu.url}`,
+🐦 𝑻𝑰𝑻𝑳𝑬 : ${anu.title}
+🐦 𝑬𝑿𝑻 : Search
+🐦 𝑰𝑫 : ${anu.videoId}
+🐦 𝑺𝑰𝒁𝑬 : ${anu.timestamp}
+🐦 𝑽𝑰𝑬𝑾𝑬𝑺 : ${anu.views}
+🐦 𝑼𝑷𝑳𝑶𝑨𝑫𝑬𝑫 𝑫𝑨𝑻𝑬 : ${anu.ago}
+🐦 𝑨𝑼𝑻𝑯𝑶𝑹 : ${anu.author.name}
+🐦 𝑪𝑯𝑨𝑵𝑵𝑬𝑳 : ${anu.author.url}
+🐦 𝑫𝑬𝑺𝑪𝑹𝑰𝑷𝑻𝑰𝑶𝑵 : ${anu.description}
+🐦 𝑼𝑹𝑳 : ${anu.url}`,
                     footer: Alena.user.name,
                     buttons: buttons,
                     headerType: 4
