@@ -202,11 +202,11 @@ module.exports = Alena = async (Alena, m, chatUpdate, store) => {
 	
 	//group target \\
 const reply = (teks) => {
-            Alena.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` ALENA-MD`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu"}}}, { quoted: m})
+            Alena.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` ALENA-MD`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/Alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu"}}}, { quoted: m})
         }
         
         const replay = (teks) => {
-            Alena.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` ALENA-MD`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu"}}}, { quoted: m})
+            Alena.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` ALENA-MD`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./media/Alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu"}}}, { quoted: m})
         }
 	
         //Public & Self\\
@@ -260,25 +260,25 @@ const reply = (teks) => {
         //auto reply 
         for (let anji of setik){
 				if (budy === anji){
-					result = fs.readFileSync(`sticker/${anji}.webp`)
+					result = fs.readFileSync(`./media/sticker/${anji}.webp`)
 					Alena.sendMessage(m.chat, { sticker: result }, { quoted: m })
 					}
 			}
 			for (let anju of vien){
 				if (budy === anju){
-					result = fs.readFileSync(`vn/${anju}.mp3`)
-					Alena.sendMessage(m.chat, { audio: result, {mimetype: 'audio/mp4', ptt: true, duration: 359996400, quoted: m })
+					result = fs.readFileSync(`./media/vn/${anju}.mp3`)
+					Alena.sendMessage(m.chat, { audio: result, {mimetype: 'audio/mp4', ptt: true, duration: 359996400, quoted:mek})
 					}
 			}
 			for (let anjh of imagi){
 				if (budy === anjh){
-					result = fs.readFileSync(`image/${anjh}.jpg`)
+					result = fs.readFileSync(`./media/image/${anjh}.jpg`)
 					Alena.sendMessage(m.chat, { image: result }, { quoted: m })
 					}
 			}
 					for (let anjh of videox){
 				if (budy === anjh){
-					result = fs.readFileSync(`vid/${anjh}.mp4`)
+					result = fs.readFileSync(`./media/vid/${anjh}.mp4`)
 					Alena.sendMessage(m.chat, { video: result }, { quoted: m })
 					}
 				  }
@@ -2865,7 +2865,7 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
 		boij = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
 		delb = await Alena.downloadMediaMessage(boij)
 		vien.push(`${nm}`)
-		fs.writeFileSync(`vn/${nm}.mp3`, delb)
+		fs.writeFileSync(`./media/vn/${nm}.mp3`, delb)
 		fs.writeFileSync('./database/vien.json', JSON.stringify(vien))
 		Alena.sendMessage(from, `ᴀᴅᴅᴇᴅ ᴛᴏ ᴅᴀᴛᴀʙᴀsᴇ✔, *${prefix}listvn*`, MessageType.text, { quoted: mek })
 		break
@@ -2875,7 +2875,7 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
 		nmm = body.slice(7)
 	    wanu = vien.indexOf(nmm)
 		vien.splice(wanu, 1)
-        fs.unlinkSync(`vn/${nmm}.mp3`)
+        fs.unlinkSync(`./media/vn/${nmm}.mp3`)
 		reply(`𝙳𝙾𝙽𝙴✔ ${body.slice(7)}`)
 		} catch (err){
 		console.log(err)
@@ -3327,7 +3327,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: fs.readFileSync('alena.jpg')},
+                            jpegThumbnail: fs.readFileSync('./media/Alena.jpg')},
                             hydratedFooterText: `┌─❖
 │「 Hi 👋 」
 └┬❖ 「 ${pushname} 」
@@ -3387,7 +3387,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: fs.readFileSync('alena.jpg')}, 
+                            jpegThumbnail: fs.readFileSync('./media/Alena.jpg')}, 
                             hydratedFooterText: `
 ┌─❖
 │「 Hi 👋 」
@@ -3806,7 +3806,7 @@ case 'allmenu': {
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: fs.readFileSync('alena.jpg')},
+                            jpegThumbnail: fs.readFileSync('./media/Alena.jpg')},
                             hydratedFooterText: `${pushname}`,
                             hydratedButtons: [{
                                 urlButton: {
