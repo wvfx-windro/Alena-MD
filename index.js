@@ -71,23 +71,7 @@ async function startAlena() {
     await Alena.updateBlockStatus(callerId, "block")
     }
     })
-
-    Alena.ev.on('messages.upsert', async chatUpdate => {
-        //console.log(JSON.stringify(chatUpdate, undefined, 2))
-        try {
-        mek = chatUpdate.messages[0]
-        if (!mek.message) return
-        mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
-        if (mek.key && mek.key.remoteJid === 'status@broadcast') return
-        if (!Alena.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
-        if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
-        m = smsg(Alena, mek, store)
-        require("./Alena-MD")(Alena, m, chatUpdate, store)
-        } catch (err) {
-            console.log(err)
-        }
-    })
-    
+        
     // Group Update
     Alena.ev.on('groups.update', async pea => {
        //console.log(pea)
