@@ -65,3 +65,18 @@ fs.watchFile(file, () => {
 	delete require.cache[file]
 	require(file)
 })
+
+//HEROKU  VARS
+global.thumburl = process.env.IMAGE || 'img url'
+global.packname = process.env.PACKNAME ||'ᴀʟᴇɴᴀ-ᴍᴅ'
+global.author = process.env.AUTHOR ||'ʏᴏᴜʀ ɴᴀᴍᴇ'
+global.name = 'ALENA MULTI-DEVICE'
+global.session = process.env.SESSION_ID|| ''
+global.wm = process.env.WATERMARK|| 'ᴀʟᴇɴᴀ ᴍᴅ'
+global.owner_name = process.env.OWNER_NAME || 'your Name'
+global.logsmsg = convertToBool(process.env.LOGS)|| false
+
+function convertToBool(text, fault = 'true') {
+  return text === fault ? true : false;
+}
+
