@@ -886,6 +886,10 @@ if (q.includes('--help')) return reply(examkosong)
  kurangDarah(m.sender, 10)
  }
  break
+case 'jid': {
+reply(m.chat)
+}
+break
 	    case 'afk': {
                 let user = global.db.data.users[m.sender]
                 user.afkTime = + new Date
