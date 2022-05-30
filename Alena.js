@@ -2181,17 +2181,12 @@ break
         })
         }
         break
-	    case 'play': case 'https://youtube.com': case 'ytplay': {
-                if (!text) return reply(`Example : ${prefix + command} Stay`)
+        case 'play': case 'song': {
+                if (!text) throw `Example : ${prefix + command} bts boy with luv`
                 let yts = require("yt-search")
                 let search = await yts(text)
-                let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
-                let buttons = [
-                    {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: '🎶𝙰𝚄𝙳𝙸𝙾'}, type: 1},
-                    {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: '𝚅𝙸𝙳𝙴𝙾📽️'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: anu.thumbnail },
+                let anu = search.videos[Math.floor(Math.random() * search.videos.length)]               
+                image: { url: anu.thumbnail },
                     caption: `
 𒆜  𝑻𝑰𝑻𝑳𝑬 : ${anu.title}
 𒆜  𝑬𝑿𝑻 : Search
@@ -2203,11 +2198,38 @@ break
 𒆜  𝑪𝑯𝑨𝑵𝑵𝑬𝑳 : ${anu.author.url}
 𒆜  𝑫𝑬𝑺𝑪𝑹𝑰𝑷𝑻𝑰𝑶𝑵 : ${anu.description}
 𒆜  𝑼𝑹𝑳 : ${anu.url}`,
-                    footer: Alena.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                Alena.sendMessage(m.chat, buttonMessage, { quoted: m })
+`
+message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { upload:   Alena.waUploadToServer })
+                template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            imageMessage: message.imageMessage,
+                            hydratedContentText: ngen,
+                            hydratedFooterText: `Playing To ${text}`,
+                            hydratedButtons: [{
+                                urlButton: {
+                                    displayText: '! 𝚅𝙸𝙳𝙴𝙾 𝙻𝙸𝙽𝙺 !',
+                                    url: `${anu.url}`
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: '! 𝙰𝚄𝙳𝙸𝙾🎵',
+                                    id: `ytmp3 ${anu.url} 320kbps`
+                                    }
+                                },{quickReplyButton: {
+                                    displayText: '! 𝚅𝙸𝙳𝙴𝙾🎥',
+                                    id: `ytmp4 ${anu.url} 360p`
+                                     }
+                                }, {
+                                quickReplyButton: {
+                                    displayText: '! 𝚅𝙸𝙳𝙴𝙾 𝙵𝚄𝙻𝙻 𝙳𝙴𝚃𝙸𝙰𝙻 !',
+                                    id: `getmusic ${anu.url} 320kbps`
+                                    }
+                            }]
+                        }
+                    }
+                }), { userJid: m.chat, quoted: m })
+                  Alena.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
             break
 	    case 'ytmp3': case 'getmusic': case 'ytaudio': {
@@ -2216,7 +2238,7 @@ break
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                Alena.sendImage(m.chat, media.thumb, `𒆜  Title : ${media.title}\n𒆜  File Size : ${media.filesizeF}\n𒆜  Url : ${isUrl(text)}\n𒆜  Ext : MP3\n𒆜  Resolution : ${args[1] || '320kbps'}`, m)
+                Alena.sendImage(m.chat, media.thumb, `𒆜  𝐓𝐈𝐓𝐋𝐄 : ${media.title}\n𒆜  𝐒𝐈𝐙𝐄 : ${media.filesizeF}\n𒆜  𝐋𝐈𝐍𝐊 : ${isUrl(text)}\n𒆜  𝐄𝐗𝐓 : MP3\n𒆜  𝐑𝐄𝐒𝐎𝐋𝐎𝐓𝐈𝐎𝐍 : ${args[1] || '320kbps'}`, m)
                 Alena.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -2226,16 +2248,20 @@ break
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                Alena.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `𒆜  Title : ${media.title}\n𒆜  File Size : ${media.filesizeF}\n𒆜  Url : ${isUrl(text)}\n𒆜  Ext : MP3\n𒆜  Resolution : ${args[1] || '360p'}` }, { quoted: m })
+                Alena.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `𒆜  𝐓𝐈𝐓𝐋𝐄 : ${media.title}\n𒆜  𝐒𝐈𝐙𝐄 : ${media.filesizeF}\n𒆜  𝐋𝐈𝐍𝐊 : ${isUrl(text)}\n𒆜  𝐄𝐗𝐓 : MP3\n𒆜  𝐑𝐄𝐒𝐎𝐋𝐎𝐓𝐈𝐎𝐍 : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
-	    case 'find': {
+	    case 'getmusic': {
                 let { yta } = require('./lib/y2mate')
+                if (!text) throw `Example : ${prefix + command} 1`
+                if (!m.quoted) return reply('Reply Message')
+                if (!m.quoted.isBaileys) throw `Can only reply to messages from bots`
 		let urls = quoted.text.match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))
-                let quality = args[1] ? args[1] : '128kbps'
+                if (!urls) throw `Maybe The Message You Replied Does Not Contain Ytsearch Results`
+                let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(urls[text - 1], quality)
-                if (media.filesize >= 100000) return reply('File Over Limit '+util.format(media))
-                Alena.sendImage(m.chat, media.thumb, `𒆜  ᴛɪᴛʟᴇ : ${media.title}\n𒆜  sɪᴢᴇ : ${media.filesizeF}\n𒆜  ʟɪɴᴋ : ${urls[text - 1]}\n𒆜  ᴇxᴛ : MP3\n𒆜  ʀᴇsᴏʟᴜᴛɪᴏɴ : ${args[1] || '128kbps'}`, m)
+                if (media.filesize >= 999999) return reply('Audio size is too big '+util.format(media))
+                Alena.sendImage(m.chat, media.thumb, `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP3\n⭔ Resolution : ${args[1] || '320kbps'}`, m)
                 Alena.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -2608,6 +2634,22 @@ case 'webtonsearch': case 'webtoon':
                 Alena.sendText(m.chat, `𒆜  *Born :* ${anu.message.tgl_lahir}\n𒆜  *When Challenged :* ${anu.message.kala_tinantang}\n𒆜  *Info :* ${anu.message.info}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
+            case 'takestick':
+		    case 'take':
+			   if (!isQuotedSticker) return reply(`Reply sticker dengan caption *${prefix}takestick nama|author*`)
+			   ppp = `${args.join(' ')}`
+		       const encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+		   	   const media = await Alena.downloadAndSaveMediaMessage(encmedia, `sticker/${sender}`)
+			   const packname = ppp.split('|')[0]
+			   const author = ppp.split('|')[1]
+			   exif.create(packname, author, `takestick_${sender}`)
+			   exec(`webpmux -set exif sticker/takestick_${sender}.exif sticker/${sender}.webp -o sticker/${sender}.webp`, async (error) => {
+			   if (error) return reply(mess.error.api)
+			   Alena.sendMessage(from, fs.readFileSync(`sticker/${sender}.webp`), sticker, {quoted: mek})
+			   fs.unlinkSync(media)
+			   fs.unlinkSync(`sticker/takestick_${sender}.exif`)
+			})
+			break
             case 'harisangar': case 'taliwangke': {
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
