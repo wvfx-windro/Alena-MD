@@ -30,13 +30,13 @@ global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
 global.mess = {
     success: 'Done ✓',
-    admin: 'This Feature Is Only For Admin!',
-    botAdmin: 'Bot Must Be Admin First!',
-    owner: 'This Feature Is Only For Owner!',
-    group: 'Feature Used Only For Groups!',
+    admin: 𝚃𝙷𝙸𝚂 𝙵𝙴𝙰𝚃𝚄𝚁𝙴 𝙸𝚂 𝙾𝙽𝙻𝚈 𝙵𝚁𝙾𝙼 𝙰𝙳𝙼𝙸𝙽 !',
+    botAdmin: '𝙰𝙳𝙼𝙸𝙽 𝙶𝙸𝚅𝙴 𝙵𝙴𝚂𝚃 𝚃𝙷𝙴𝙽 𝚆𝙾𝚁𝙲𝙺 𝙲𝙾𝙼𝙼𝙰𝙽𝙳!',
+    owner: '𝚃𝙷𝙸𝚂 𝙵𝙴𝙰𝚃𝚄𝚁𝙴 𝙸𝚂 𝙾𝙽𝙻𝚈 𝙵𝚁𝙾𝙼 𝙾𝚆𝙽𝙴𝚁!',
+    group: '𝚃𝙷𝙸𝚂 𝙵𝙴𝙰𝚃𝚄𝚁𝙴 𝙸𝚂 𝙾𝙽𝙻𝚈 𝙵𝙾𝚁 𝙶𝚁𝙾𝚄𝙿!',
     private: 'Features Used Only For Private Chat!',
     bot: 'This Feature Is Only For Bot',
-    wait: 'Wait A minute...',
+    wait: '𝙻𝙾𝙰𝙳𝙸𝙽𝙶...',
     error: 'Error! Maybe Api Key Is Expired🤔!',
     endLimit: 'Your Daily Limit Has Expired, The Limit Will Be Reset Every 12 Hours',
 }
