@@ -200,11 +200,11 @@ module.exports = Alena = async (Alena, m, chatUpdate, store) => {
 	
 	//group target \\
 const reply = (teks) => {
-            Alena.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` ALENA-MD`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu"}}}, { quoted: m})
+            Alena.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` ALENA-MD`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Alena-MD"}}}, { quoted: m})
         }
         
         const replay = (teks) => {
-            Alena.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` ALENA-MD`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu"}}}, { quoted: m})
+            Alena.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` ALENA-MD`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Alena-MD"}}}, { quoted: m})
         }
 	
         //Public & Self\\
@@ -265,7 +265,7 @@ const reply = (teks) => {
 			for (let anju of vien){
 				if (budy === anju){
 					result = fs.readFileSync(`vn/${anju}.mp3`)
-					Alena.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+					Alena.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', duration: 359996400, ptt: true }, { quoted: m })     
 					}
 			}
 			for (let anjh of imagi){
@@ -1311,6 +1311,28 @@ Alena.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}
                     await Alena.sendButtonText(m.chat, buttons, jawab, Alena.user.name, m, {mentions: ments})
             }
             break
+case 'tobc':
+				if (!isOwner) return reply(mess.only.ownerB)
+				if (args.length < 1) return reply('𝚃𝙴𝚇𝚃?')
+				var bc = body.slice(6)
+					Alena.updatePresence(from, Presence.composing)
+					anu = await Alena.chats.all()
+					if (isMedia && !mek.message.videoMessage || isQuotedAudio) {
+						const encmedia = isQuotedAudio ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+						buff = await Alena.downloadMediaMessage(encmedia)
+						for (let _ of anu) {
+							Alena.sendMessage(_.jid, buff, audio, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})}, message: { orderMessage: { itemCount: 9999999999, status: 200, thumbnail: fs.readFileSync('alena.jpg'), surface: 200, message: `${bc}`, orderTitle: `${bc}`, sellerJid: '0@s.whatsapp.net'}}}, contextInfo: { forwardingScore: 508, isForwarded: true}, mimetype: 'audio/mp4', duration: 7356663773663, ptt: true })
+						}
+						} else if (isMedia && !mek.message.videoMessage || isQuotedSticker) {
+						const encmedia = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+						buff = await Alena.downloadMediaMessage(encmedia)
+						for (let _ of anu) {
+							Alena.sendMessage(_.jid, buff, sticker, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})}, message: { orderMessage: { itemCount: 9999999999, status: 200, thumbnail: fs.readFileSync('alena.jpg'), surface: 200, message: `${bc}`, orderTitle: `${bc}`, sellerJid: '0@s.whatsapp.net'}}}, contextInfo: { forwardingScore: 508, isForwarded: true}})
+							}
+							} else{
+          reply('reply sticker/audio')
+							}
+					break
 case 'when':
 				if (!text) return replay(`Use Text, Example : ${prefix + command} will i get married `)
 					const kapan = ['5 More Days', '10 More Days', '15 More Days','20 More Days', '25 More Days','30 More Days','35 More Days','40 More Days','45 More Days','50 More Days','55 More Days','60 More Days','65 More Days','70 More Days','75 More Days','80 More Days','85 More Days','90 More Days','100 More Days','5 Months More', '10 Months More', '15 Months More','20 Months More', '25 Months More','30 Months More','35 Months More','40 Months More','45 Months More','50 Months More','55 Months More','60 Months More','65 Months More','70 Months More','75 Months More','80 Months More','85 Months More','90 Months More','100 Months More','1 More Year','2 More Years','3 More Years','4 More Years','5 More Years','Tomorrow','The Day After Tomorrow',`After This Command, You Too ${q}`]
@@ -1364,7 +1386,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
                if (!text) return replay(`Example : ${prefix + command} packname|author`)
           global.packname = text.split("|")[0]
           global.author = text.split("|")[1]
-          reply(`*Exif Has Been Successfully Changed to*\n\n🐦 Packname : ${global.packname}\n🐦 Author : ${global.author}`)
+          reply(`*Exif Has Been Successfully Changed to*\n\n𒆜  Packname : ${global.packname}\n𒆜  Author : ${global.author}`)
             }
             break
 	case 'kick': {
@@ -1456,7 +1478,7 @@ let teks = `╚»˙·٠•●♥ ᴛᴀɢ ᴀʟʟ ♥●•٠·˙«╝
  
  ➲ *Message : ${q ? q : 'no message'}*\n\n`
                 for (let mem of participants) {
-                teks += `🐦 @${mem.id.split('@')[0]}\n`
+                teks += `𒆜  @${mem.id.split('@')[0]}\n`
                 }
                 Alena.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
                 }
@@ -1476,7 +1498,7 @@ let teks = `╚»˙·٠•●♥ ᴛᴀɢ ᴀʟʟ ♥●•٠·˙«╝
                 let anu = await styletext(text)
                 let teks = `Entered Text ${text}\n\n`
                 for (let i of anu) {
-                    teks += `🐦 *${i.name}* : ${i.result}\n\n`
+                    teks += `𒆜  *${i.name}* : ${i.result}\n\n`
                 }
                 reply(teks)
 	    }
@@ -1607,6 +1629,71 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
             Alena.sendMessage(m.chat, buttonMessageDevote)
 	}
             break
+            case 'help':
+if(menusimpel == false){
+stst = await Alena.getStatus(`${sender.split('@')[0]}@c.us`)
+				stst = stst.status == 401 ? '' : stst.status
+			num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
+fill =`𝙷𝚒 𝙱𝚛𝚘 ${pushname}, ${tampilUcapan}
+𝙿𝚕𝚎𝚊𝚜𝚎 𝚜𝚎𝚕𝚎𝚌𝚝 𝚜𝚑𝚘𝚠𝚒𝚗𝚐 𝚖𝚎𝚗𝚞
+
+If the button doesnt appear, type .allmenu
+`
+menu =`ꪶ𝑨𝑩𝑼⇥𝑴𝑫ꫂ⁩`
+gbutsan = [
+{buttonId:`allmenu`,buttonText:{displayText:'𝙼𝙴𝙽𝚄!'},type:1},
+{buttonId:`owner`,buttonText:{displayText:'𝙾𝚆𝙽𝙴𝚁!'},type:1},
+{buttonId:`script`,buttonText:{displayText:'𝙶𝙸𝚃'},type:1}
+]
+mhan = await Alena.prepareMessage(from, ofrply, image, {thumbnail: ofrply})
+const buttonMessages = {
+imageMessage: mhan.message.imageMessage,
+contentText: `${fill}`,
+footerText: `${menu}`,
+buttons: gbutsan,
+headerType: 4
+}
+Alena.sendMessage(from, buttonMessages, MessageType.buttonsMessage, {
+        thumbnail: fs.readFileSync('./alena.jpg'),
+        "contextInfo": {
+            mentionedJid: [otod]},
+        caption: 'Tes',
+            quoted: ftok})
+}
+else if(menusimpel = true){
+   stst = await Alena.getStatus(`${sender.split('@')[0]}@c.us`)
+				stst = stst.status == 401 ? '' : stst.status
+			num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
+data = fs.readFileSync('./lib/logo.js');
+jsonData = JSON.parse(data);
+randIndex = Math.floor(Math.random() * jsonData.length);
+randKey = jsonData[randIndex];
+gambar = await getBuffer(randKey.result)
+   menu = `*𝙷𝚎𝚕𝚕𝚘 ${pushname}*
+*If the button is not there*
+*𝚃𝚢𝚙𝚎 .allmenu*
+
+𝙱𝙾𝚃-𝙸𝙽𝙵𝙾
+✍ 𝙾𝚆𝙽𝙴𝚁 : @${otod.split('@')[0]}
+✍ 𝙱𝙰𝚃𝚃𝙴𝚁𝚈 : ${baterai.battery}
+✍ 𝙼𝙾𝙳𝙴 : ${publik ? 'Public' : 'Self'}
+✍ 𝙿𝚁𝙴𝙵𝙸𝚇 : ${multi ? 'Multi Prefix' : 'No Prefix'}
+✍ 𝚃𝙾𝚃𝙰𝙻 𝙷𝙸𝚃: ${cmhit.length}
+
+𝚃𝙸𝙼𝙴-𝙸𝙽𝙵𝙾
+☯ ${tampilUcapan} ${pushname}
+☯ 𝚃𝙸𝙼𝙴 : ${timeWib}
+☯ 𝚃𝙸𝙼𝙴 : ${timeWita}
+☯ 𝚃𝙸𝙼𝙴 : ${timeWit}  
+☯ 𝙳𝙰𝚈 : ${week} ${weton}
+☯ 𝙳𝙰𝚃𝙴 : ${calender}`
+sendButLocation(from, `${menu}`, "𝐀𝐁𝐔⇥𝐌𝐃", {jpegThumbnail:gambar,name:""}, [
+{buttonId:`allmenu`,buttonText:{displayText:'ᴍᴇɴᴜ'},type:1},
+{buttonId:`owner`,buttonText:{displayText:'ᴏᴡɴᴇʀ'},type:1},
+{buttonId:`script`,buttonText:{displayText:'ɢɪᴛʜᴜʙ'},type:1}
+], {contextInfo: { mentionedJid: [otod]}})
+}
+           	break
                  
 case 'checkvote':
 if (!m.isGroup) return replay(`${mess.group}`)
@@ -1791,12 +1878,12 @@ break
 		    await sleep(1500)
 		    let btn = [{
                                 urlButton: {
-                                    displayText: 'Script🔖',
+                                    displayText: '𝙶𝙸𝚃𝙷𝚄𝙱!',
                                     url: `${sc}`
                                 }
                             }, {
                                 urlButton: {
-                                    displayText: 'YouTube📍',
+                                    displayText: '𝙸𝙽𝚂𝚃𝙰!',
                                     url: `${myweb}`
                                 }
                             }, {
@@ -1806,7 +1893,7 @@ break
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: 'ᴏᴡɴᴇʀ',
                                     id: 'owner'
                                 }
                             }]
@@ -1825,8 +1912,8 @@ break
                     let read = i.readTimestamp
                     let unread = i.receiptTimestamp
                     let waktu = read ? read : unread
-                    teks += `🐦 @${i.userJid.split('@')[0]}\n`
-                    teks += ` ┗━🐦 *Time :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} 🐦 *Status :* ${read ? 'Read' : 'Sent'}\n\n`
+                    teks += `𒆜  @${i.userJid.split('@')[0]}\n`
+                    teks += ` ┗━𒆜  *Time :* ${moment(waktu * 1000).format('DD/MM/YY HH:mm:ss')} 𒆜  *Status :* ${read ? 'Read' : 'Sent'}\n\n`
                 }
                 Alena.sendTextWithMentions(m.chat, teks, m)
             }
@@ -1861,7 +1948,7 @@ break
              case 'listonlinexxx': case 'onlinelistxxx': {
                     let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
                     let online = [...Object.keys(store.presences[id]), botNumber]
-                    Alena.sendText(m.chat, 'Online List:\n\n' + online.map(v => '🐦 @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
+                    Alena.sendText(m.chat, 'Online List:\n\n' + online.map(v => '𒆜  @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
              }
              break
             case 'sticker': case 's': case 'stickergif': case 'sgif': {
@@ -1956,15 +2043,34 @@ break
             Alena.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : m })
             }
             break
+            case 'tts':
+					if (args.length < 1) return Alena.sendMessage(from, `Kode bahasanya mana kak? contoh : ${prefix}tts id yamate kudasai`, text, { quoted: mek })
+				   const gtts = require('./lib/gtts')(args[0])
+					if (args.length < 2) return Alena.sendMessage(from, `Teksnya mana kak? contoh : ${prefix}tts id yamate kudasai`, text, { quoted: mek })
+					var bby = body.slice(8)
+					ranm = getRandom('.mp3')
+					rano = getRandom('.ogg')
+					bby.length > 300
+						? reply('Text is too long')
+						: gtts.save(ranm, bby, function () {
+							exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
+								fs.unlinkSync(ranm)
+								buff = fs.readFileSync(rano)
+								if (err) return reply(dla.stikga())
+								Alena.sendMessage(from, buff, audio, { duration: 359996400, ptt: true, quoted: mek })
+								fs.unlinkSync(rano)
+							})
+						})
+					break
             case 'mp3': {
-            if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Convert Into MP3 With Caption ${prefix + command}`)
+            if (/video/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Convert Into MP3 With Caption ${prefix + command}`)
             if (!/video/.test(mime) && !/audio/.test(mime)) return replay(`Send/Reply Video/Audio You Want To Convert into MP3 With Caption ${prefix + command}`)
             if (!quoted) return replay(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
             reply(mess.wait)
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
-            Alena.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `sᴏɴɢ ${Alena.user.name}.mp3`}, { quoted : m })
+            Alena.sendMessage(m.chat, {audio: audio, mimetype: 'audio/mpeg', fileName: `sᴏɴɢ ${Alena.user.name}.mp3`}, { quoted : m })
             }
             break
             case 'tovn': case 'toptt': {
@@ -2034,7 +2140,7 @@ break
                 let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
                 let no = 1
                 for (let i of search.all) {
-                    teks += `🐦 ɴᴏ : ${no++}\n🐦 ᴛʏᴘᴇ : ${i.type}\n🐦 ᴠɪᴅᴇᴏ ʟɪɴᴋ : ${i.videoId}\n🐦 ᴛɪᴛʟᴇ : ${i.title}\n🐦 ᴠɪᴇᴡs : ${i.views}\n🐦 sɪᴢᴇ : ${i.timestamp}\n🐦 ᴠɪᴅᴇᴏ ᴜʟᴏᴀᴅᴇᴅ ᴅᴀᴛᴇ : ${i.ago}\n🐦 ᴀᴜᴛʜᴏʀ : ${i.author.name}\n🐦 ᴜʀʟ : ${i.url}\n\n─────────────────\n\n`
+                    teks += `𒆜  ɴᴏ : ${no++}\n𒆜  ᴛʏᴘᴇ : ${i.type}\n𒆜  ᴠɪᴅᴇᴏ ʟɪɴᴋ : ${i.videoId}\n𒆜  ᴛɪᴛʟᴇ : ${i.title}\n𒆜  ᴠɪᴇᴡs : ${i.views}\n𒆜  sɪᴢᴇ : ${i.timestamp}\n𒆜  ᴠɪᴅᴇᴏ ᴜʟᴏᴀᴅᴇᴅ ᴅᴀᴛᴇ : ${i.ago}\n𒆜  ᴀᴜᴛʜᴏʀ : ${i.author.name}\n𒆜  ᴜʀʟ : ${i.url}\n\n─────────────────\n\n`
                 }
                 Alena.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
             }
@@ -2045,9 +2151,9 @@ break
                 google({'query': text}).then(res => {
                 let teks = `Google Search Title : ${text}\n\n`
                 for (let g of res) {
-                teks += `🐦 *Title* : ${g.title}\n`
-                teks += `🐦 *Description* : ${g.snippet}\n`
-                teks += `🐦 *Link* : ${g.link}\n\n────────────────────────\n\n`
+                teks += `𒆜  *Title* : ${g.title}\n`
+                teks += `𒆜  *Description* : ${g.snippet}\n`
+                teks += `𒆜  *Link* : ${g.link}\n\n────────────────────────\n\n`
                 } 
                 reply(teks)
                 })
@@ -2087,16 +2193,16 @@ break
                 let buttonMessage = {
                     image: { url: anu.thumbnail },
                     caption: `
-🐦 𝑻𝑰𝑻𝑳𝑬 : ${anu.title}
-🐦 𝑬𝑿𝑻 : Search
-🐦 𝑰𝑫 : ${anu.videoId}
-🐦 𝑺𝑰𝒁𝑬 : ${anu.timestamp}
-🐦 𝑽𝑰𝑬𝑾𝑬𝑺 : ${anu.views}
-🐦 𝑼𝑷𝑳𝑶𝑨𝑫𝑬𝑫 𝑫𝑨𝑻𝑬 : ${anu.ago}
-🐦 𝑨𝑼𝑻𝑯𝑶𝑹 : ${anu.author.name}
-🐦 𝑪𝑯𝑨𝑵𝑵𝑬𝑳 : ${anu.author.url}
-🐦 𝑫𝑬𝑺𝑪𝑹𝑰𝑷𝑻𝑰𝑶𝑵 : ${anu.description}
-🐦 𝑼𝑹𝑳 : ${anu.url}`,
+𒆜  𝑻𝑰𝑻𝑳𝑬 : ${anu.title}
+𒆜  𝑬𝑿𝑻 : Search
+𒆜  𝑰𝑫 : ${anu.videoId}
+𒆜  𝑺𝑰𝒁𝑬 : ${anu.timestamp}
+𒆜  𝑽𝑰𝑬𝑾𝑬𝑺 : ${anu.views}
+𒆜  𝑼𝑷𝑳𝑶𝑨𝑫𝑬𝑫 𝑫𝑨𝑻𝑬 : ${anu.ago}
+𒆜  𝑨𝑼𝑻𝑯𝑶𝑹 : ${anu.author.name}
+𒆜  𝑪𝑯𝑨𝑵𝑵𝑬𝑳 : ${anu.author.url}
+𒆜  𝑫𝑬𝑺𝑪𝑹𝑰𝑷𝑻𝑰𝑶𝑵 : ${anu.description}
+𒆜  𝑼𝑹𝑳 : ${anu.url}`,
                     footer: Alena.user.name,
                     buttons: buttons,
                     headerType: 4
@@ -2110,7 +2216,7 @@ break
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                Alena.sendImage(m.chat, media.thumb, `🐦 Title : ${media.title}\n🐦 File Size : ${media.filesizeF}\n🐦 Url : ${isUrl(text)}\n🐦 Ext : MP3\n🐦 Resolution : ${args[1] || '320kbps'}`, m)
+                Alena.sendImage(m.chat, media.thumb, `𒆜  Title : ${media.title}\n𒆜  File Size : ${media.filesizeF}\n𒆜  Url : ${isUrl(text)}\n𒆜  Ext : MP3\n𒆜  Resolution : ${args[1] || '320kbps'}`, m)
                 Alena.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -2120,7 +2226,7 @@ break
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                Alena.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `🐦 Title : ${media.title}\n🐦 File Size : ${media.filesizeF}\n🐦 Url : ${isUrl(text)}\n🐦 Ext : MP3\n🐦 Resolution : ${args[1] || '360p'}` }, { quoted: m })
+                Alena.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `𒆜  Title : ${media.title}\n𒆜  File Size : ${media.filesizeF}\n𒆜  Url : ${isUrl(text)}\n𒆜  Ext : MP3\n𒆜  Resolution : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
 	    case 'getmusicxxx': {
@@ -2129,7 +2235,7 @@ break
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(urls[text - 1], quality)
                 if (media.filesize >= 100000) return reply('File Over Limit '+util.format(media))
-                Alena.sendImage(m.chat, media.thumb, `🐦 Title : ${media.title}\n🐦 File Size : ${media.filesizeF}\n🐦 Url : ${urls[text - 1]}\n🐦 Ext : MP3\n🐦 Resolution : ${args[1] || '128kbps'}`, m)
+                Alena.sendImage(m.chat, media.thumb, `𒆜  Title : ${media.title}\n𒆜  File Size : ${media.filesizeF}\n𒆜  Url : ${urls[text - 1]}\n𒆜  Ext : MP3\n𒆜  Resolution : ${args[1] || '128kbps'}`, m)
                 Alena.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
@@ -2143,7 +2249,7 @@ break
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(urls[text - 1], quality)
                 if (media.filesize >= 100000) return reply('File Over Limit '+util.format(media))
-                Alena.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `🐦 Title : ${media.title}\n🐦 File Size : ${media.filesizeF}\n🐦 Url : ${urls[text - 1]}\n🐦 Ext : MP3\n🐦 Resolution : ${args[1] || '360p'}` }, { quoted: m })
+                Alena.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `𒆜  Title : ${media.title}\n𒆜  File Size : ${media.filesizeF}\n𒆜  Url : ${urls[text - 1]}\n𒆜  Ext : MP3\n𒆜  Resolution : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
             case 'pinterest': {
@@ -2151,7 +2257,7 @@ break
 		let { pinterest } = require('./lib/scraper')
                 anu = await pinterest(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
-                Alena.sendMessage(m.chat, { image: { url: result }, caption: '🐦 Media Url : '+result }, { quoted: m })
+                Alena.sendMessage(m.chat, { image: { url: result }, caption: '𒆜  Media Url : '+result }, { quoted: m })
             }
             break
 case 'webtonsearch': case 'webtoon':
@@ -2227,7 +2333,7 @@ case 'webtonsearch': case 'webtoon':
                     var but = [
 				{
 					"urlButton": {
-						"displayText": "YouTube📍",
+						"displayText": "𝙸𝙽𝚂𝚃𝙰!",
 						"url": `${myweb}`
 						}
 					}
@@ -2251,7 +2357,7 @@ case 'webtonsearch': case 'webtoon':
                     var but = [
 				{
 					"urlButton": {
-						"displayText": "YouTube📍",
+						"displayText": "𝙸𝙽𝚂𝚃𝙰!",
 						"url": `${myweb}`
 						}
 					}
@@ -2299,7 +2405,7 @@ case 'webtonsearch': case 'webtoon':
                 ]
                 let buttonMessage = {
                     image: { url: result.image[0] },
-                    caption: `🐦 Title : ${result.title}\n🐦 Category : ${result.type}\n🐦 Detail : ${result.source}\n🐦 Media Url : ${result.image[2] || result.image[1] || result.image[0]}`,
+                    caption: `𒆜  Title : ${result.title}\n𒆜  Category : ${result.type}\n𒆜  Detail : ${result.source}\n𒆜  Media Url : ${result.image[2] || result.image[1] || result.image[0]}`,
                     footer: Alena.user.name,
                     buttons: buttons,
                     headerType: 4
@@ -2317,7 +2423,7 @@ case 'webtonsearch': case 'webtoon':
                 ]
                 let buttonMessage = {
                     image: { url: result.image },
-                    caption: `🐦 Title : ${result.title}\n🐦 Source : ${result.source}\n🐦 Media Url : ${result.image}`,
+                    caption: `𒆜  Title : ${result.title}\n𒆜  Source : ${result.source}\n𒆜  Media Url : ${result.image}`,
                     footer: Alena.user.name,
                     buttons: buttons,
                     headerType: 4
@@ -2365,14 +2471,14 @@ case 'webtonsearch': case 'webtoon':
                 if (!Number(text)) return reply(`Example : ${prefix + command} 916909137213`)
                 let anu = await primbon.nomer_hoki(Number(text))
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Phone Number :* ${anu.message.nomer_hp}\n🐦 *Shuzi Angka Figures :* ${anu.message.angka_shuzi}\n🐦 *Positive Energy :*\n- Riches : ${anu.message.energi_positif.kekayaan}\n- Health : ${anu.message.energi_positif.kesehatan}\n- Love : ${anu.message.energi_positif.cinta}\n- Stability : ${anu.message.energi_positif.kestabilan}\n- Percentage : ${anu.message.energi_positif.persentase}\n🐦 *Negative Energy :*\n- Dispute : ${anu.message.energi_negatif.perselisihan}\n- Lost : ${anu.message.energi_negatif.kehilangan}\n- Catastrophe : ${anu.message.energi_negatif.malapetaka}\n- Destruction : ${anu.message.energi_negatif.kehancuran}\n- Percentage : ${anu.message.energi_negatif.persentase}`, m)
+                Alena.sendText(m.chat, `𒆜  *Phone Number :* ${anu.message.nomer_hp}\n𒆜  *Shuzi Angka Figures :* ${anu.message.angka_shuzi}\n𒆜  *Positive Energy :*\n- Riches : ${anu.message.energi_positif.kekayaan}\n- Health : ${anu.message.energi_positif.kesehatan}\n- Love : ${anu.message.energi_positif.cinta}\n- Stability : ${anu.message.energi_positif.kestabilan}\n- Percentage : ${anu.message.energi_positif.persentase}\n𒆜  *Negative Energy :*\n- Dispute : ${anu.message.energi_negatif.perselisihan}\n- Lost : ${anu.message.energi_negatif.kehilangan}\n- Catastrophe : ${anu.message.energi_negatif.malapetaka}\n- Destruction : ${anu.message.energi_negatif.kehancuran}\n- Percentage : ${anu.message.energi_negatif.persentase}`, m)
             }
             break
             case 'artimimpi': case 'tafsirmimpi': {
                 if (!text) return reply(`Example : ${prefix + command} belanja`)
                 let anu = await primbon.tafsir_mimpi(text)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Dream :* ${anu.message.mimpi}\n🐦 *Meaning :* ${anu.message.arti}\n🐦 *Solution :* ${anu.message.solusi}`, m)
+                Alena.sendText(m.chat, `𒆜  *Dream :* ${anu.message.mimpi}\n𒆜  *Meaning :* ${anu.message.arti}\n𒆜  *Solution :* ${anu.message.solusi}`, m)
             }
             break
             case 'ramalanjodoh': case 'ramaljodoh': {
@@ -2380,7 +2486,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Your Name :* ${anu.message.nama_anda.nama}\n🐦 *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n🐦 *Couple Name :* ${anu.message.nama_pasangan.nama}\n🐦 *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n🐦 *Results :* ${anu.message.result}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Your Name :* ${anu.message.nama_anda.nama}\n𒆜  *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n𒆜  *Couple Name :* ${anu.message.nama_pasangan.nama}\n𒆜  *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n𒆜  *Results :* ${anu.message.result}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'ramalanjodohbali': case 'ramaljodohbali': {
@@ -2388,7 +2494,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh_bali(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Your Name :* ${anu.message.nama_anda.nama}\n🐦 *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n🐦 *Couple Name :* ${anu.message.nama_pasangan.nama}\n🐦 *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n🐦 *Results :* ${anu.message.result}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Your Name :* ${anu.message.nama_anda.nama}\n𒆜  *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n𒆜  *Couple Name :* ${anu.message.nama_pasangan.nama}\n𒆜  *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n𒆜  *Results :* ${anu.message.result}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'suamiistri': {
@@ -2396,7 +2502,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.suami_istri(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Husband's Name :* ${anu.message.suami.nama}\n🐦 *Husband Born :* ${anu.message.suami.tgl_lahir}\n🐦 *Wife's Name :* ${anu.message.istri.nama}\n🐦 *Born Wife :* ${anu.message.istri.tgl_lahir}\n🐦 *Results :* ${anu.message.result}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Husband's Name :* ${anu.message.suami.nama}\n𒆜  *Husband Born :* ${anu.message.suami.tgl_lahir}\n𒆜  *Wife's Name :* ${anu.message.istri.nama}\n𒆜  *Born Wife :* ${anu.message.istri.tgl_lahir}\n𒆜  *Results :* ${anu.message.result}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'ramalancinta': case 'ramalcinta': {
@@ -2404,14 +2510,14 @@ case 'webtonsearch': case 'webtoon':
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_cinta(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Your Name :* ${anu.message.nama_anda.nama}\n🐦 *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n🐦 *Couple Name :* ${anu.message.nama_pasangan.nama}\n🐦 *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n🐦 *Positive Side :* ${anu.message.sisi_positif}\n🐦 *Negative Side :* ${anu.message.sisi_negatif}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Your Name :* ${anu.message.nama_anda.nama}\n𒆜  *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n𒆜  *Couple Name :* ${anu.message.nama_pasangan.nama}\n𒆜  *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n𒆜  *Positive Side :* ${anu.message.sisi_positif}\n𒆜  *Negative Side :* ${anu.message.sisi_negatif}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'artinama': {
                 if (!text) throw `Example : ${prefix + command} Dika Ardianta`
                 let anu = await primbon.arti_nama(text)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Name :* ${anu.message.nama}\n🐦 *Meaning :* ${anu.message.arti}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Name :* ${anu.message.nama}\n𒆜  *Meaning :* ${anu.message.arti}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'kecocokannama': case 'cocoknama': {
@@ -2419,7 +2525,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.kecocokan_nama(nama, tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Name :* ${anu.message.nama}\n🐦 *Born :* ${anu.message.tgl_lahir}\n🐦 *Life Path :* ${anu.message.life_path}\n🐦 *Destiny :* ${anu.message.destiny}\n🐦 *Destiny Desire :* ${anu.message.destiny_desire}\n🐦 *Personality :* ${anu.message.personality}\n🐦 *Percentage :* ${anu.message.persentase_kecocokan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Name :* ${anu.message.nama}\n𒆜  *Born :* ${anu.message.tgl_lahir}\n𒆜  *Life Path :* ${anu.message.life_path}\n𒆜  *Destiny :* ${anu.message.destiny}\n𒆜  *Destiny Desire :* ${anu.message.destiny_desire}\n𒆜  *Personality :* ${anu.message.personality}\n𒆜  *Percentage :* ${anu.message.persentase_kecocokan}`, m)
             }
             break
             case 'kecocokanpasangan': case 'cocokpasangan': case 'pasangan': {
@@ -2427,7 +2533,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama1, nama2] = text.split`|`
                 let anu = await primbon.kecocokan_nama_pasangan(nama1, nama2)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendImage(m.chat,  anu.message.gambar, `🐦 *Your Name :* ${anu.message.nama_anda}\n🐦 *Couple Name :* ${anu.message.nama_pasangan}\n🐦 *Positive Side :* ${anu.message.sisi_positif}\n🐦 *Negative Side :* ${anu.message.sisi_negatif}`, m)
+                Alena.sendImage(m.chat,  anu.message.gambar, `𒆜  *Your Name :* ${anu.message.nama_anda}\n𒆜  *Couple Name :* ${anu.message.nama_pasangan}\n𒆜  *Positive Side :* ${anu.message.sisi_positif}\n𒆜  *Negative Side :* ${anu.message.sisi_negatif}`, m)
             }
             break
             case 'jadianpernikahan': case 'jadiannikah': {
@@ -2435,7 +2541,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.tanggal_jadian_pernikahan(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Wedding Date :* ${anu.message.tanggal}\n🐦 *Characteristics :* ${anu.message.karakteristik}`, m)
+                Alena.sendText(m.chat, `𒆜  *Wedding Date :* ${anu.message.tanggal}\n𒆜  *Characteristics :* ${anu.message.karakteristik}`, m)
             }
             break
             case 'sifatusaha': {
@@ -2443,7 +2549,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_usaha_bisnis(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Born :* ${anu.message.hari_lahir}\n🐦 *Business :* ${anu.message.usaha}`, m)
+                Alena.sendText(m.chat, `𒆜  *Born :* ${anu.message.hari_lahir}\n𒆜  *Business :* ${anu.message.usaha}`, m)
             }
             break
             case 'rejeki': case 'rezeki': {
@@ -2451,7 +2557,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rejeki_hoki_weton(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Born :* ${anu.message.hari_lahir}\n🐦 *Sustenance :* ${anu.message.rejeki}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Born :* ${anu.message.hari_lahir}\n𒆜  *Sustenance :* ${anu.message.rejeki}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'pekerjaan': case 'kerja': {
@@ -2459,7 +2565,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.pekerjaan_weton_lahir(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Born :* ${anu.message.hari_lahir}\n🐦 *Profession :* ${anu.message.pekerjaan}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Born :* ${anu.message.hari_lahir}\n𒆜  *Profession :* ${anu.message.pekerjaan}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'ramalannasib': case 'ramalnasib': case 'nasib': {
@@ -2467,7 +2573,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.ramalan_nasib(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Analysis :* ${anu.message.analisa}\n🐦 *Root Number :* ${anu.message.angka_akar}\n🐦 *Nature :* ${anu.message.sifat}\n🐦 *Element :* ${anu.message.elemen}\n🐦 *Lucky Numbers :* ${anu.message.angka_keberuntungan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Analysis :* ${anu.message.analisa}\n𒆜  *Root Number :* ${anu.message.angka_akar}\n𒆜  *Nature :* ${anu.message.sifat}\n𒆜  *Element :* ${anu.message.elemen}\n𒆜  *Lucky Numbers :* ${anu.message.angka_keberuntungan}`, m)
             }
             break
             case 'potensipenyakit': case 'penyakit': {
@@ -2475,7 +2581,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.cek_potensi_penyakit(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Analysis :* ${anu.message.analisa}\n🐦 *Sector :* ${anu.message.sektor}\n?? *Element :* ${anu.message.elemen}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Analysis :* ${anu.message.analisa}\n𒆜  *Sector :* ${anu.message.sektor}\n?? *Element :* ${anu.message.elemen}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'artitarot': case 'tarot': {
@@ -2483,7 +2589,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.arti_kartu_tarot(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendImage(m.chat, anu.message.image, `🐦 *Born :* ${anu.message.tgl_lahir}\n🐦 *Tarot Symbol :* ${anu.message.simbol_tarot}\n🐦 *Meaning :* ${anu.message.arti}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendImage(m.chat, anu.message.image, `𒆜  *Born :* ${anu.message.tgl_lahir}\n𒆜  *Tarot Symbol :* ${anu.message.simbol_tarot}\n𒆜  *Meaning :* ${anu.message.arti}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'fengshui': {
@@ -2491,7 +2597,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama, gender, tahun] = text.split`,`
                 let anu = await primbon.perhitungan_feng_shui(nama, gender, tahun)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Name :* ${anu.message.nama}\n🐦 *Born :* ${anu.message.tahun_lahir}\n🐦 *Gender :* ${anu.message.jenis_kelamin}\n🐦 *Kua Number :* ${anu.message.angka_kua}\n🐦 *Group :* ${anu.message.kelompok}\n🐦 *Character :* ${anu.message.karakter}\n🐦 *Good Sector :* ${anu.message.sektor_baik}\n🐦 *Bad Sector :* ${anu.message.sektor_buruk}`, m)
+                Alena.sendText(m.chat, `𒆜  *Name :* ${anu.message.nama}\n𒆜  *Born :* ${anu.message.tahun_lahir}\n𒆜  *Gender :* ${anu.message.jenis_kelamin}\n𒆜  *Kua Number :* ${anu.message.angka_kua}\n𒆜  *Group :* ${anu.message.kelompok}\n𒆜  *Character :* ${anu.message.karakter}\n𒆜  *Good Sector :* ${anu.message.sektor_baik}\n𒆜  *Bad Sector :* ${anu.message.sektor_buruk}`, m)
             }
             break
             case 'haribaik': {
@@ -2499,7 +2605,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.petung_hari_baik(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Born :* ${anu.message.tgl_lahir}\n🐦 *When Challenged :* ${anu.message.kala_tinantang}\n🐦 *Info :* ${anu.message.info}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Born :* ${anu.message.tgl_lahir}\n𒆜  *When Challenged :* ${anu.message.kala_tinantang}\n𒆜  *Info :* ${anu.message.info}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'harisangar': case 'taliwangke': {
@@ -2507,7 +2613,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.hari_sangar_taliwangke(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Born :* ${anu.message.tgl_lahir}\n🐦 *Results :* ${anu.message.result}\n🐦 *Info :* ${anu.message.info}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Born :* ${anu.message.tgl_lahir}\n𒆜  *Results :* ${anu.message.result}\n𒆜  *Info :* ${anu.message.info}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'harinaas': case 'harisial': {
@@ -2515,7 +2621,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_hari_naas(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Day Of Birth :* ${anu.message.hari_lahir}\n🐦 *Date Of Birth :* ${anu.message.tgl_lahir}\n🐦 *Fateful Day :* ${anu.message.hari_naas}\n🐦 *Info :* ${anu.message.catatan}\n🐦 *Notes :* ${anu.message.info}`, m)
+                Alena.sendText(m.chat, `𒆜  *Day Of Birth :* ${anu.message.hari_lahir}\n𒆜  *Date Of Birth :* ${anu.message.tgl_lahir}\n𒆜  *Fateful Day :* ${anu.message.hari_naas}\n𒆜  *Info :* ${anu.message.catatan}\n𒆜  *Notes :* ${anu.message.info}`, m)
             }
             break
             case 'nagahari': case 'harinaga': {
@@ -2523,7 +2629,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rahasia_naga_hari(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Day Of Birth :* ${anu.message.hari_lahir}\n🐦 *Date Of Birth :* ${anu.message.tgl_lahir}\n🐦 *Dragon Day Direction :* ${anu.message.arah_naga_hari}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Day Of Birth :* ${anu.message.hari_lahir}\n𒆜  *Date Of Birth :* ${anu.message.tgl_lahir}\n𒆜  *Dragon Day Direction :* ${anu.message.arah_naga_hari}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'arahrejeki': case 'arahrezeki': {
@@ -2531,7 +2637,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_arah_rejeki(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Day Of Birth :* ${anu.message.hari_lahir}\n🐦 *Date Of Birth :* ${anu.message.tgl_lahir}\n🐦 *Sustenance Direction :* ${anu.message.arah_rejeki}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Day Of Birth :* ${anu.message.hari_lahir}\n𒆜  *Date Of Birth :* ${anu.message.tgl_lahir}\n𒆜  *Sustenance Direction :* ${anu.message.arah_rejeki}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'peruntungan': {
@@ -2539,7 +2645,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama, tgl, bln, thn, untuk] = text.split`,`
                 let anu = await primbon.ramalan_peruntungan(nama, tgl, bln, thn, untuk)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Name :* ${anu.message.nama}\n🐦 *Born :* ${anu.message.tgl_lahir}\n🐦 *Fortune Of The Year :* ${anu.message.peruntungan_tahun}\n🐦 *Results :* ${anu.message.result}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Name :* ${anu.message.nama}\n𒆜  *Born :* ${anu.message.tgl_lahir}\n𒆜  *Fortune Of The Year :* ${anu.message.peruntungan_tahun}\n𒆜  *Results :* ${anu.message.result}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'weton': case 'wetonjawa': {
@@ -2547,7 +2653,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.weton_jawa(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Date :* ${anu.message.tanggal}\n🐦 *Number Of Neptune :* ${anu.message.jumlah_neptu}\n🐦 *Day Character :* ${anu.message.watak_hari}\n🐦 *Dragon Day :* ${anu.message.naga_hari}\n🐦 *Good Hour :* ${anu.message.jam_baik}\n🐦 *Birth Character :* ${anu.message.watak_kelahiran}`, m)
+                Alena.sendText(m.chat, `𒆜  *Date :* ${anu.message.tanggal}\n𒆜  *Number Of Neptune :* ${anu.message.jumlah_neptu}\n𒆜  *Day Character :* ${anu.message.watak_hari}\n𒆜  *Dragon Day :* ${anu.message.naga_hari}\n𒆜  *Good Hour :* ${anu.message.jam_baik}\n𒆜  *Birth Character :* ${anu.message.watak_kelahiran}`, m)
             }
             break
             case 'sifat': case 'karakter': {
@@ -2555,7 +2661,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_karakter_tanggal_lahir(nama, tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Name :* ${anu.message.nama}\n🐦 *Born :* ${anu.message.tgl_lahir}\n🐦 *Lifeline :* ${anu.message.garis_hidup}`, m)
+                Alena.sendText(m.chat, `𒆜  *Name :* ${anu.message.nama}\n𒆜  *Born :* ${anu.message.tgl_lahir}\n𒆜  *Lifeline :* ${anu.message.garis_hidup}`, m)
             }
             break
             case 'keberuntungan': {
@@ -2563,7 +2669,7 @@ case 'webtonsearch': case 'webtoon':
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.potensi_keberuntungan(nama, tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Name :* ${anu.message.nama}\n🐦 *Born :* ${anu.message.tgl_lahir}\n🐦 *Results :* ${anu.message.result}`, m)
+                Alena.sendText(m.chat, `𒆜  *Name :* ${anu.message.nama}\n𒆜  *Born :* ${anu.message.tgl_lahir}\n𒆜  *Results :* ${anu.message.result}`, m)
             }
             break
             case 'memancing': {
@@ -2571,7 +2677,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_memancing_ikan(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Date :* ${anu.message.tgl_memancing}\n🐦 *Results :* ${anu.message.result}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Date :* ${anu.message.tgl_memancing}\n𒆜  *Results :* ${anu.message.result}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'masasubur': {
@@ -2579,7 +2685,7 @@ case 'webtonsearch': case 'webtoon':
                 let [tgl, bln, thn, siklus] = text.split`,`
                 let anu = await primbon.masa_subur(tgl, bln, thn, siklus)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Results :* ${anu.message.result}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Results :* ${anu.message.result}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'zodiak': case 'zodiac': {
@@ -2614,14 +2720,14 @@ case 'webtonsearch': case 'webtoon':
                 
                 let anu = await primbon.zodiak(zodiac)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Zodiac :* ${anu.message.zodiak}\n🐦 *Number :* ${anu.message.nomor_keberuntungan}\n🐦 *Aroma :* ${anu.message.aroma_keberuntungan}\n🐦 *Planet :* ${anu.message.planet_yang_mengitari}\n🐦 *Flower :* ${anu.message.bunga_keberuntungan}\n🐦 *Color :* ${anu.message.warna_keberuntungan}\n🐦 *Stone :* ${anu.message.batu_keberuntungan}\n🐦 *Element :* ${anu.message.elemen_keberuntungan}\n🐦 *Zodiac Couple :* ${anu.message.pasangan_zodiak}\n🐦 *Notes :* ${anu.message.catatan}`, m)
+                Alena.sendText(m.chat, `𒆜  *Zodiac :* ${anu.message.zodiak}\n𒆜  *Number :* ${anu.message.nomor_keberuntungan}\n𒆜  *Aroma :* ${anu.message.aroma_keberuntungan}\n𒆜  *Planet :* ${anu.message.planet_yang_mengitari}\n𒆜  *Flower :* ${anu.message.bunga_keberuntungan}\n𒆜  *Color :* ${anu.message.warna_keberuntungan}\n𒆜  *Stone :* ${anu.message.batu_keberuntungan}\n𒆜  *Element :* ${anu.message.elemen_keberuntungan}\n𒆜  *Zodiac Couple :* ${anu.message.pasangan_zodiak}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'shio': {
                 if (!text) throw `Example : ${prefix + command} tikus\n\nNote : For Detail https://primbon.com/shio.htm`
                 let anu = await primbon.shio(text)
                 if (anu.status == false) return reply(anu.message)
-                Alena.sendText(m.chat, `🐦 *Results :* ${anu.message}`, m)
+                Alena.sendText(m.chat, `𒆜  *Results :* ${anu.message}`, m)
             }
             break
 	    case 'stalker': case 'stalk': {
@@ -2663,13 +2769,13 @@ case 'webtonsearch': case 'webtoon':
                     if (!id) return reply(`No Query username, Example : ${prefix + command} ig josephxeon13`)
                     let { result: anu } = await fetchJson(api('zenz', '/api/stalker/ig', { username: id }, 'apikey'))
                     if (anu.status == false) return reply(anu.result.message)
-                    Alena.sendMedia(m.chat, anu.caption.profile_hd, '', `🐦 Full Name : ${anu.caption.full_name}\n🐦 User Name : ${anu.caption.user_name}\n🐦 ID ${anu.caption.user_id}\n🐦 Following : ${anu.caption.followers}\n🐦 Followers : ${anu.caption.following}\n🐦 Bussines : ${anu.caption.bussines}\n🐦 Professional : ${anu.caption.profesional}\n🐦 Verified : ${anu.caption.verified}\n🐦 Private : ${anu.caption.private}\n🐦 Bio : ${anu.caption.biography}\n🐦 Bio Url : ${anu.caption.bio_url}`, m)
+                    Alena.sendMedia(m.chat, anu.caption.profile_hd, '', `𒆜  Full Name : ${anu.caption.full_name}\n𒆜  User Name : ${anu.caption.user_name}\n𒆜  ID ${anu.caption.user_id}\n𒆜  Following : ${anu.caption.followers}\n𒆜  Followers : ${anu.caption.following}\n𒆜  Bussines : ${anu.caption.bussines}\n𒆜  Professional : ${anu.caption.profesional}\n𒆜  Verified : ${anu.caption.verified}\n𒆜  Private : ${anu.caption.private}\n𒆜  Bio : ${anu.caption.biography}\n𒆜  Bio Url : ${anu.caption.bio_url}`, m)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'npm') {
                     if (!id) return reply(`No Query username, Example : ${prefix + command} npm scrape-primbon`)
                     let { result: anu } = await fetchJson(api('zenz', '/api/stalker/npm', { query: id }, 'apikey'))
                     if (anu.status == false) return reply(anu.result.message)
-                    reply(`🐦 Name : ${anu.name}\n🐦 Version : ${Object.keys(anu.versions)}\n🐦 Created : ${tanggal(anu.time.created)}\n🐦 Modified : ${tanggal(anu.time.modified)}\n🐦 Maintainers :\n ${anu.maintainers.map(v => `- ${v.name} : ${v.email}`).join('\n')}\n\n🐦 Description : ${anu.description}\n🐦 Homepage : ${anu.homepage}\n🐦 Keywords : ${anu.keywords}\n🐦 Author : ${anu.author.name}\n🐦 License : ${anu.license}\n🐦 Readme : ${anu.readme}`)
+                    reply(`𒆜  Name : ${anu.name}\n𒆜  Version : ${Object.keys(anu.versions)}\n𒆜  Created : ${tanggal(anu.time.created)}\n𒆜  Modified : ${tanggal(anu.time.modified)}\n𒆜  Maintainers :\n ${anu.maintainers.map(v => `- ${v.name} : ${v.email}`).join('\n')}\n\n𒆜  Description : ${anu.description}\n𒆜  Homepage : ${anu.homepage}\n𒆜  Keywords : ${anu.keywords}\n𒆜  Author : ${anu.author.name}\n𒆜  License : ${anu.license}\n𒆜  Readme : ${anu.readme}`)
 		    db.data.users[m.sender].limit -= 1
                 } else {
                     reply(`Example : ${prefix +command} type id\n\nList Type :\n1. ff (Free Fire)\n2. ml (Mobile Legends)\n3. aov (Arena Of Valor)\n4. cod (Call Of Duty)\n5. pb (point Blank)\n6. ig (Instagram)\n7. npm (https://npmjs.com)`)
@@ -2755,7 +2861,7 @@ case 'webtonsearch': case 'webtoon':
                 if (!text) return reply(`No Query Title`)
                 reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/joox', { query: text }, 'apikey'))
-                let msg = await Alena.sendImage(m.chat, anu.result.img, `🐦 Title : ${anu.result.lagu}\n🐦 Album : ${anu.result.album}\n🐦 Singer : ${anu.result.penyanyi}\n🐦 Publish : ${anu.result.publish}\n🐦 Lyrics :\n${anu.result.lirik.result}`, m)
+                let msg = await Alena.sendImage(m.chat, anu.result.img, `𒆜  Title : ${anu.result.lagu}\n𒆜  Album : ${anu.result.album}\n𒆜  Singer : ${anu.result.penyanyi}\n𒆜  Publish : ${anu.result.publish}\n𒆜  Lyrics :\n${anu.result.lirik.result}`, m)
                 Alena.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: msg })
             }
             break
@@ -2763,7 +2869,7 @@ case 'webtonsearch': case 'webtoon':
                 if (!text) return reply(`No Query Title`)
                 reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
-                let msg = await Alena.sendImage(m.chat, anu.result.thumb, `🐦 Title : ${anu.result.title}\n🐦 Url : ${isUrl(text)[0]}`)
+                let msg = await Alena.sendImage(m.chat, anu.result.thumb, `𒆜  Title : ${anu.result.title}\n𒆜  Url : ${isUrl(text)[0]}`)
                 Alena.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: msg })
             }
             break
@@ -2806,7 +2912,7 @@ case 'webtonsearch': case 'webtoon':
                 if (!text) return reply(`Enter Query Link!`)
                 reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/facebook', { url: text }, 'apikey'))
-                Alena.sendMessage(m.chat, { video: { url: anu.result.url }, caption: `🐦 Title : ${anu.result.title}`}, { quoted: m })
+                Alena.sendMessage(m.chat, { video: { url: anu.result.url }, caption: `𒆜  Title : ${anu.result.title}`}, { quoted: m })
             }
             break
 	        case 'pindl': case 'pinterestdl': {
@@ -2828,11 +2934,11 @@ case 'webtonsearch': case 'webtoon':
 		    let buttonMessage = {
 		        image: { url: anu.author.profilePic },
 			caption: `
-🐦 Title : ${anu.title}
-🐦 Author : ${anu.author.name}
-🐦 Like : ${anu.like}
-🐦 Caption : ${anu.caption}
-🐦 Url : ${anu.media[0]}
+𒆜  Title : ${anu.title}
+𒆜  Author : ${anu.author.name}
+𒆜  Like : ${anu.like}
+𒆜  Caption : ${anu.caption}
+𒆜  Url : ${anu.media[0]}
 To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp4 Command With The Url Above
 `,
 			footer: Alena.user.name,
@@ -2842,7 +2948,7 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
 		    Alena.sendMessage(m.chat, buttonMessage, { quoted: m })
 		} else if (anu.type == 'image') {
 		    anu.media.map(async (url) => {
-		        Alena.sendMessage(m.chat, { image: { url }, caption: `🐦 Title : ${anu.title}\n🐦 Author : ${anu.author.name}\n🐦 Like : ${anu.like}\n🐦 Caption : ${anu.caption}` }, { quoted: m })
+		        Alena.sendMessage(m.chat, { image: { url }, caption: `𒆜  Title : ${anu.title}\n𒆜  Author : ${anu.author.name}\n𒆜  Like : ${anu.like}\n𒆜  Caption : ${anu.caption}` }, { quoted: m })
 		    })
 		}
 	    }
@@ -3319,54 +3425,49 @@ reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, 
                      case 'alive': case 'bot':{
                            	timestampe = speed();
 latensie = speed() - timestampe
- anu = ` `
+                anu = ``
 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
                             hydratedContentText: anu,
                             locationMessage: {
-                            jpegThumbnail: fs.readFileSync('alena.jpg')},
-                            hydratedFooterText: `┌─❖
-│「 Hi 👋 」
-└┬❖ 「 ${pushname} 」
-┌┤✑  Shashi burina thaicho🎉
-││✑  🐦🖐️!!
-│└───────────────┈ ⳹
-│ 「 BOT INFO 」
-│✙ 𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
-│✙ 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
-│✙ 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
-│✙ 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
-│✙ 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner}
-│✙ 𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
-│✙ 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
-│✙ 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
-└┬──────────────┈ ⳹
-   │✑  Please Select The Button Below
-   └───────────────┈ ⳹`,
+                            jpegThumbnail: fs.readFileSync('alena.jpg')}, 
+                            hydratedFooterText: `
+┌───────────────┈ ⳹
+│ 「𝐈𝐀𝐌 𝐀𝐋𝐈𝐕𝐄 𝐁𝐑𝐎」
+│
+│    𝐻𝑌 𝐵𝑅𝑂 ${pushname}
+│ 
+│ 𒆜 𝙱𝙾𝚃 𝙽𝙰𝙼𝙴 :- ${global.botname}
+│ 𒆜 𝙾𝚆𝙽𝙴𝚁 𝙽𝙰𝙼𝙴 :- ${global.ownername}
+│ 𒆜 𝙷𝙾𝚂𝚃 𝙽𝙰𝙼𝙴 :- ${os.hostname()}
+│ 𒆜 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁 :- ${Object.keys(global.db.data.users).length}
+│ 𒆜 𝚂𝙿𝙴𝙴𝙳 :- ${latensie.toFixed(4)} miliseconds
+│ 𒆜 𝚁𝚄𝙽𝙽𝙸𝙽𝙶 𝚃𝙸𝙼𝙴:- ${runtime(process.uptime())}
+└───────────────┈ ⳹`,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'YouTube📍',
+                                    displayText: '𝙸𝙽𝚂𝚃𝙰!',
                                     url: `${myweb}`
                                 }
                             }, {
                             	urlButton: {
-                                displayText: 'Script🔖',
+                                displayText: '𝙶𝙸𝚃𝙷𝚄𝙱!',
                                     url: `${sc}`
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '🍇All Menu🍇',
+                                    displayText: '𝐌𝐄𝐍𝐔',
                                     id: `${prefix}allmenu`
                                 }
                                 }, {
                                 quickReplyButton: {
-                                    displayText: '🍒List Menu🍒',
+                                    displayText: '𝐋𝐈𝐒𝐓',
                                     id: `${prefix}command`
                                 }
                                 }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: '𝐎𝐖𝐍𝐄𝐑',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -3376,6 +3477,39 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 Alena.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
 break
+case 'mforward':
+					Alena.updatePresence(from, Presence.composing)
+					if (!isOwner) return reply(mess.only.ownerB)
+					if (args.length < 1) return reply('What is text?')
+					anu = await Alena.chats.all()
+					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
+						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+						buff = await Alena.downloadMediaMessage(encmedia)
+						for (let _ of anu) {
+							Alena.sendMessage(_.jid, buff, image, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})}, message: { orderMessage: { itemCount: 9999999, status: 200, thumbnail: fs.readFileSync('Alena.jpg'), surface: 200, message: `Broadcast`, orderTitle: `Broadcast`, sellerJid: '0@s.whatsapp.net'}}}, contextInfo: { forwardingScore: 508, isForwarded: true}, caption: `${body.slice(4)}` })
+						}
+						reply(`Broadcast success ${body.slice(4)}`)
+						} else if (isMedia && !mek.message.videoMessage || isQuotedVideo) {
+						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+						buff = await Alena.downloadMediaMessage(encmedia)
+						for (let _ of anu) {
+							Alena.sendMessage(_.jid, buff, video, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})}, message: { orderMessage: { itemCount: 9999999, status: 200, thumbnail: fs.readFileSync('alena.jpg'), surface: 200, message: `Broadcast`, orderTitle: `Broadcast`, sellerJid: '0@s.whatsapp.net'}}}, contextInfo: { forwardingScore: 508, isForwarded: true}, caption: `${body.slice(4)}` })
+						}
+						reply(`Broadcast success ${body.slice(4)}`)
+						} else if (isMedia && !mek.message.videoMessage || isQuotedVideo) {
+						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+						buff = await Alena.downloadMediaMessage(encmedia)
+						for (let _ of anu) {
+							Alena.sendMessage(_.jid, buff, video, { mimetype: Mimetype.gif, quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})}, message: { orderMessage: { itemCount: 9999999, status: 200, thumbnail: fs.readFileSync('alena.jpg'), surface: 200, message: `Broadcast`, orderTitle: `Broadcast`, sellerJid: '0@s.whatsapp.net'}}}, contextInfo: { forwardingScore: 508, isForwarded: true}, caption: `${body.slice(4)}` })
+						}
+						reply(`Broadcast success ${body.slice(4)}`)
+					} else {
+						for (let _ of anu) {
+							sendMess(_.jid, `${body.slice(4)}`)
+						}
+						reply(`Broadcast success:\n${body.slice(4)}`)
+					}
+					break
             case 'list': case 'menu': {
             	timestampe = speed();
 latensie = speed() - timestampe
@@ -3406,12 +3540,12 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
    └───────────────┈ ⳹`,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'YouTube📍',
+                                    displayText: '𝙸𝙽𝚂𝚃𝙰!',
                                     url: `${myweb}`
                                 }
                             }, {
                             	urlButton: {
-                                displayText: 'Script🔖',
+                                displayText: '𝙶𝙸𝚃𝙷𝚄𝙱!',
                                     url: `${sc}`
                                 }
                             }, {
@@ -3426,7 +3560,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                                 }
                                 }, {
                                 quickReplyButton: {
-                                    displayText: 'Owner🐦',
+                                    displayText: 'Owner𒆜 ',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -3436,119 +3570,119 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 Alena.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
                 break
-                case 'command': {
+                case 'list': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
                     title: `Hi ${pushname}`,
-                    description: `Please Choose The Menu\n\n`,
+                    description: `𝑪𝑳𝑰𝑪𝑲 𝑯𝑬𝑹𝑬 /n 𝑨𝑳𝑳 𝑴𝑬𝑵𝑼\n\n`,
                     buttonText: "Menu",
                     footerText: `${global.footer}`,
                     listType: "SINGLE_SELECT",
                     sections: [{
-								"title": "Main Features",
+								"title": "ᴍᴀɪɴ ғᴇᴀᴛᴜʀᴇs",
 								"rows": [
 									{
-										"title": "Main Menu",
-										"description": "Displays The List Of Main Features",
+										"title": "ᴍᴀɪɴ ᴍᴇɴᴜ",
+										"description": "ᴅᴇsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ᴍᴀɪɴ ғᴇᴀᴛᴜʀᴇs",
 										"rowId": `${prefix}mainmenu`
 									}
 								]
 							},
 							{
-								"title": "Bot Features",
+								"title": "ʙᴏᴛ ғᴇᴀᴛᴜʀᴇs",
 								"rows": [
 									{
-										"title": "All Menu",
-										"description": "Displays The List Of All The Features!",
+										"title": "ᴀʟʟ ᴍᴇɴᴜ",
+										"description": "ᴅᴇsᴘʟᴀʏ ᴛʜᴇ ʟɪsᴛ ᴏғ ғᴇᴀᴛᴜʀᴇs!",
 										"rowId": `${prefix}allmenu`
 									},
 									{
-										"title": "Owner Menu",
+										"title": "ᴏᴡɴᴇʀ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Owner Features",
 										"rowId": `${prefix}ownermenu`
 										},
 									{
-										"title": "Group Menu",
+										"title": "ɢʀᴏᴜᴘ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Main Features",
 										"rowId": `${prefix}groupmenu`
 										},
 									{
-										"title": "Rpg Menu",
+										"title": "ʀᴘɢ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Rpg Features",
 										"rowId": `${prefix}rpgmenu`
 									},
 									{
-										"title": "Download Menu",
+										"title": "ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Download Features",
 										"rowId": `${prefix}downloadmenu`
 									},
 									{
-										"title": "Search Menu",
+										"title": "sᴇᴀʀᴄʜ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Searching Features",
 										"rowId": `${prefix}searchmenu`
 									},
 									{
-											"title": "Random Menu",
+											"title": "ʀᴀɴᴅᴏᴍ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Random Features",
 										"rowId": `${prefix}randommenu`
 										},
 										{
-											"title": "Random Anime Menu",
+											"title": "ʀᴀɴᴅᴏᴍ ᴀɴɪᴍᴇ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Random Anime Features",
 										"rowId": `${prefix}randomanimemenu`
 										},
 										{
-											"title": "Fun Menu",
+											"title": "ғᴜɴ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Fun Features",
 										"rowId": `${prefix}funmenu`
 										},
 										{
-											"title": "Convert Menu",
+											"title": "ᴄᴏɴᴠᴇʀᴛᴇʀ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Convert Features",
 										"rowId": `${prefix}convertmenu`
 										},
 										{
-											"title": "Database Menu",
+											"title": "ᴅᴀᴛᴀʙᴀsᴇ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Database Features",
 										"rowId": `${prefix}databasemenu`
 										},
 										{
-											"title": "Voice Changer Menu",
+											"title": "ᴠᴏɪᴄᴇ ᴄʜᴀɴɢᴇʀ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Voice Changing Features",
 										"rowId": `${prefix}voicechangermenu`
 										},
 										{
-											"title": "TXT-to-IMG Menu",
+											"title": "ᴛxᴛ ᴛᴏ ɪᴍɢ",
 										"description": "Displays The List Of Textpro Features",
 										"rowId": `${prefix}textpromenu`
 										},
 										{
-											"title": "Islamic Menu",
+											"title": "ɪsʟᴀᴍɪᴄ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Islamic Features",
 										"rowId": `${prefix}islamicmenu`
 										},
 										{
-											"title": "Horoscope Menu",
+											"title": "ʜᴏʀᴏsᴄᴏᴘᴇ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Horoscope Features",
 										"rowId": `${prefix}horoscopemenu`
 										}
 								]
 							},
 							{
-								"title": "Chat With Fellow Users",
+								"title": "ᴄʜᴀᴛ ᴡɪᴛʜ ғᴏʟʟᴏᴡ ᴜsᴇʀs",
 								"rows": [
 									{
-										"title": "Anonymous Chat Menu",
+										"title": "ᴀɴᴏɴʏᴍᴏᴜs ᴄʜᴀᴛ ᴍᴇɴᴜ",
 										"description": "Displays The List Of Anonymous Chat Features",
 										"rowId": `${prefix}anonymouschatmenu`
 									}
 								]
 							},
 							{
-								"title": "Credit",
+								"title": "ᴄʀᴇᴅɪᴛ",
 								"rows": [
 									{
-										"title": "Thanks To",
+										"title": "ᴛᴀɴᴋs ᴛᴏ",
 										"description": "Displays The List Of Credit Of The Bot !!",
 										"rowId": `${prefix}tqtt`
 									}
@@ -3808,12 +3942,12 @@ case 'allmenu': {
                             hydratedFooterText: `${pushname}`,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'YouTube📍',
+                                    displayText: '𝙸𝙽𝚂𝚃𝙰!',
                                     url: `${myweb}`
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '👤Owner👤',
+                                    displayText: 'ᴏᴡɴᴇʀ',
                                     id: `${prefix}owner`
                                 }
                             }]
@@ -3842,7 +3976,7 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╠ ${prefix}donate
 ┃╠ ${prefix}report [bug]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 
 case 'grupmenu': case 'groupmenu':
@@ -3871,7 +4005,7 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}checkvote
 ┃╠${prefix}delvote
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 
 case 'rpgmenu':
@@ -3889,7 +4023,7 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}buy [option]
 ┃╠${prefix}sell [option]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 
 case 'funmenu':
@@ -3942,7 +4076,7 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╠ ${prefix}math [mode]
 ┃╠ ${prefix}suitpvp [tag]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 
 case 'ownermenu':
@@ -3971,7 +4105,7 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}checkvote
 ┃╠${prefix}delvote
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 case 'downloadmenu':
 var unicorn = await getBuffer(picak+'Downloader Menu')
@@ -3986,7 +4120,7 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}joox [query]
 ┃╠${prefix}soundcloud [url]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 case 'searchmenu':
 var unicorn = await getBuffer(picak+'Search Menu')
@@ -4005,7 +4139,7 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}ringtone [query]
 ┃╠${prefix}webtoon [query]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 case 'randommenu':
 var unicorn = await getBuffer(picak+'Random Menu')
@@ -4016,7 +4150,7 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}animequote (indo)
 ┃╠${prefix}couplepp
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 case 'randomanimemenu':
 var unicorn = await getBuffer(picak+'Random Anime Menu')
@@ -4051,7 +4185,7 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}dance
 ┃╠${prefix}cringe
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 case 'textpromenu':
 var unicorn = await getBuffer(picak+'Text Pro Menu')
@@ -4090,7 +4224,7 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╠ ${prefix}blackpink [txt]
 ┃╠ ${prefix}gluetext [txt]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 case 'convertmenu':
 var unicorn = await getBuffer(picak+'Converter Menu')
@@ -4109,7 +4243,7 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╠ ${prefix}ebinary [reply txt]
 ┃╠ ${prefix}dbinary [reply txt]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 case 'databasemenu':
 var unicorn = await getBuffer(picak+'Database Menu')
@@ -4125,7 +4259,7 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╠ ${prefix}getmsg
 ┃╠ ${prefix}delmsg
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 case 'databasemenu':
 var unicorn = await getBuffer(picak+'Database Menu')
@@ -4137,7 +4271,7 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}next
 ┃╠${prefix}leave
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 case 'islamicmenu':
 var unicorn = await getBuffer(picak+'Islamic Menu')
@@ -4146,7 +4280,7 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╔══✪「 ISLAMIC 」	        
 ┃╠${prefix}juzamma
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 case 'voicechangermenu':
 var unicorn = await getBuffer(picak+'Voice Changer Menu')
@@ -4165,7 +4299,7 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}slow [reply aud]
 ┃╠${prefix}squirrel [reply aud]
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 case 'horoscopemenu':
 var unicorn = await getBuffer(picak+'Horoscope Menu')
@@ -4203,15 +4337,13 @@ await Alena.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}zodiak (indo)
 ┃╠${prefix}shio (indo)
 ┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
 case 'thanksto': case 'tqto': case 'tqtt':
 var unicorn = await getBuffer(picak+'Developer')
 await Alena.send5ButImg(from, `` + '' + ' ', `
-Thanks to Me ( Alena)
-Alien-Alfa (For helping me to deploy qr in replit and answered my every doubts regard this project)
-DGXeon ( 45% Credits goes to him ,in this script)
-And Again Me (King Alena 🎉) 🐦 Who Helped Assemble This Sexy Script !!!`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+𝚃𝙷𝙸𝚂 𝙱𝙾𝚃 𝙲𝚁𝙴𝙰𝚃𝙴𝙳 𝙱𝚈 𝙰𝙱𝚄 𝚂𝙴𝚁
+𝙰𝙻𝙴𝙽𝙰 𝙼𝙳 𝚆𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃 𒆜  !!!`,unicorn, [{"urlButton": {"displayText": "𝙸𝙽𝚂𝚃𝙰!","url": `${myweb}`}},{"urlButton": {"displayText": "𝙶𝙸𝚃𝙷𝚄𝙱!","url": `${sc}`}},{"quickReplyButton": {"displayText": "ᴘᴀʏ","id": 'donate'}},{"quickReplyButton": {"displayText": "ᴏᴡɴᴇʀ","id": 'owner'}}] )
 break
             default:
                 if (budy.startsWith('=>')) {
