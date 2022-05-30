@@ -1312,7 +1312,7 @@ Alena.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}
             }
             break
 case 'tobc':
-				if (!isCreator) return reply(mess.only.ownerB)
+				if (!isCreator) return reply(mess.only.owner)
 				if (args.length < 1) return reply('𝚃𝙴𝚇𝚃?')
 				var bc = body.slice(6)
 					Alena.updatePresence(from, Presence.composing)
@@ -2962,7 +2962,7 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
 	    }
 	    break
 	    case 'addbgm':
-	    if (!isCreator && !mek.key.fromMe) return reply(mess.only.ownerB)
+	    if (!isCreator && !mek.key.fromMe) return reply(mess.only.owner)
 		if (!isQuotedAudio) return reply('𝚁𝚎𝚙𝚕𝚢 𝚝𝚘 𝙰𝚞𝚍𝚒𝚘')
 		nm = body.slice(7)
 		if (!nm) return reply('𝚆𝚑𝚊𝚝 𝚒𝚜 𝚋𝚐𝚖 𝚗𝚊𝚖𝚎?')
@@ -2974,7 +2974,7 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
 		Alena.sendMessage(from, `ᴀᴅᴅᴇᴅ ᴛᴏ ᴅᴀᴛᴀʙᴀsᴇ✔, *${prefix}listvn*`, MessageType.text, { quoted: mek })
 		break
 		case 'delbgm':
-		if (!isCreator && !mek.key.fromMe) return reply(mess.only.ownerB)
+		if (!isCreator && !mek.key.fromMe) return reply(mess.only.owner)
 	    try {
 		nmm = body.slice(7)
 	    wanu = vien.indexOf(nmm)
@@ -3479,7 +3479,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 break
 case 'mforward':
 					Alena.updatePresence(from, Presence.composing)
-					if (!isCreator) return reply(mess.only.ownerB)
+					if (!isCreator) return reply(mess.only.owner)
 					if (args.length < 1) return reply('What is text?')
 					anu = await Alena.chats.all()
 					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
