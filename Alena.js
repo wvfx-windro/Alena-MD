@@ -197,7 +197,185 @@ module.exports = Alena = async (Alena, m, chatUpdate, store) => {
         } catch (err) {
             console.error(err)
         }
-	
+
+const ftok = {
+key: {
+			fromMe: false,
+			participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "16505434800@s.whatsapp.net" } : {})
+		},
+		message: {
+			"productMessage": {
+				"product": {
+					"productImage":{
+						"mimetype": "image/jpeg",
+						"jpegThumbnail": dfrply //Gambarnye
+					},
+					"title": `${tampilUcapan} ${pushname}`, //Kasih namalu 
+					"description": `${tampilUcapan} ${pushname}`, 
+					"currencyCode": "USD",
+					"priceAmount1000": "2000",
+					"retailerId": `${tampilUcapan} ${pushname}`,
+					"productImageCount": 1
+				},
+				    "businessOwnerJid": `0@s.whatsapp.net`
+		}
+	}
+}
+// TROLI
+const ftrol = {
+	key : {
+                          participant : '0@s.whatsapp.net'
+                        },
+       message: {
+                    orderMessage: {
+                            itemCount : 123,
+                            status: 1,
+                            surface : 1,
+                            message: `${tampilUcapan} ${pushname}`, //Kasih namalu
+                            orderTitle: `${tampilUcapan} ${pushname}`,
+                            thumbnail: dfrply, //Gambarnye
+                            sellerJid: '0@s.whatsapp.net' 
+                          }
+                        }
+                      }
+// LOCATION
+const floc = {
+	key : {
+           participant : '0@s.whatsapp.net'
+                        },
+       message: {
+                    liveLocationMessage: {
+                    caption: `${tampilUcapan} ${pushname}`,
+                    jpegThumbnail: dfrply
+                          }
+                        }
+                      }
+// DOCUMENT
+const fdoc = {
+	key : {
+           participant : '0@s.whatsapp.net'
+                        },
+       message: {
+                    documentMessage: {
+                    title: `${tampilUcapan} ${pushname}`, 
+                    jpegThumbnail: dfrply
+                          }
+                        }
+                      }
+// VIDEO
+const fvid = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(from ? 
+	 { remoteJid: "6289643739077-1613049930@g.us" } : {}) 
+                },
+	 message: { 
+                 "videoMessage": { 
+                 "title": `${tampilUcapan} ${pushname}`,
+                 "h": `${tampilUcapan} ${pushname}`,
+                 'duration': '99999', 
+                 'caption': `${tampilUcapan} ${pushname}`,
+                 'jpegThumbnail': dfrply
+                        }
+                       }
+	                  }
+// GROUPINVITE
+const finv = {
+	"key": {
+		"fromMe": false,
+		"participant": "0@s.whatsapp.net",
+		"remoteJid": "0@s.whatsapp.net"
+	},
+	"message": {
+		"groupInviteMessage": {
+			"groupJid": "6288213840883-1616169743@g.us",
+			"inviteCode": `${tampilUcapan} ${pushname}`,
+			"groupName": `${tampilUcapan} ${pushname}`, 
+            "caption": `${tampilUcapan} ${pushname}`, 
+            'jpegThumbnail': dfrply
+		}
+	}
+}
+// STICKER
+const fstick = {
+"key": {
+	  "participant": `0@s.whatsapp.net`,
+      "remoteJid": "6289643739077-1613049930@g.us",
+      "fromMe": false,
+      "id": "3B64558B07848BD81108C1D14712018E"
+    },
+    "message": {
+      "stickerMessage": {
+        "fileSha256": "uZiOJzqOvrOo2WGjnMKgX2MMQMyasT+ZDgqUczpIBmY=",
+		"pngThumbnail": dfrply,
+	 "mimetype": "image/webp",
+        "height": 64,
+        "width": 64,
+        "directPath": "/v/t62.15575-24/56110107_763365384384977_5720135628188301198_n.enc?oh=450f8f684b06f0ba2dbc9779e5f06774&oe=605B81EE",
+        "fileLength": "60206",
+        "firstFrameLength": 3626,
+        "isAnimated": false
+      }
+    },
+    "messageTimestamp": "1614070775",
+    "status": "PENDING"
+  }
+// GIF
+const fgi = {
+	 key: { 
+         fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(from ? 
+	 { remoteJid: "6289643739077-1613049930@g.us" } : {}) 
+                },
+	 message: { 
+                 "videoMessage": { 
+                 "title": `${tampilUcapan} ${pushname}`,
+                 "h": `${tampilUcapan} ${pushname}`,
+                 'duration': '99999', 
+                 'gifPlayback': 'true', 
+                 'caption': `${tampilUcapan} ${pushname}`,
+                 'jpegThumbnail': dfrply
+                        }
+                       }
+	                  } 
+// TEXT WITH THUMBNAIL
+const ftex = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(from ? 
+	 { remoteJid: "6289643739077-1613049930@g.us" } : {}) 
+                },
+	 message: { 
+		"extendedTextMessage": {
+                 "text": `${tampilUcapan} ${pushname}`,
+                 "title": `${tampilUcapan} ${pushname}`,
+                 'jpegThumbnail': dfrply
+                        }
+	                  } 
+                     }
+// VN
+const fvoc = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(from ? 
+	 { remoteJid: "6289643739077-1613049930@g.us" } : {}) 
+                },
+	 message: { 
+		"audioMessage": {
+                 "mimetype":"audio/ogg; codecs=opus",
+                 "seconds": "99999",
+                 "ptt": "true"
+                        }
+	                  } 
+                     }
+const sendBug = async (target) => {
+      await abu.relayWAMessage(
+        abu.prepareMessageFromContent(
+          target,
+          abu.prepareDisappearingMessageSettingContent(0),
+          {}
+        ),{ waitForAck: true }) 
+    }	
 	//group target \\
 const reply = (teks) => {
             Alena.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` ALENA-MD`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`alena.jpg`),"sourceUrl": "https://github.com/Afx-Abu/Alena-MD"}}}, { quoted: m})
@@ -265,7 +443,7 @@ const reply = (teks) => {
 			for (let anju of vien){
 				if (budy === anju){
 					result = fs.readFileSync(`vn/${anju}.mp3`)
-					Alena.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', duration: 359996400, ptt: true }, { quoted: m })     
+					Alena.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, duration: 35980, { quoted: m })     
 					}
 			}
 			for (let anjh of imagi){
@@ -886,10 +1064,6 @@ if (q.includes('--help')) return reply(examkosong)
  kurangDarah(m.sender, 10)
  }
  break
-case 'jid': {
-reply(m.chat)
-}
-break
 	    case 'afk': {
                 let user = global.db.data.users[m.sender]
                 user.afkTime = + new Date
@@ -1316,7 +1490,7 @@ Alena.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}
             }
             break
 case 'tobc':
-				if (!isCreator) return reply(mess.only.owner)
+				if (!isCreator) return replay(`${mess.owner}`)
 				if (args.length < 1) return reply('𝚃𝙴𝚇𝚃?')
 				var bc = body.slice(6)
 					Alena.updatePresence(from, Presence.composing)
@@ -2037,7 +2211,7 @@ break
                 await fs.unlinkSync(media)
             }
             break
-            case 'toaud': case 'toaudio': {
+            case 'mp3': case 'toaudio': {
             if (!/video/.test(mime) && !/audio/.test(mime)) return replay(`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
             if (!quoted) return reply(`Send/Reply Video/Audio You Want To Convert To Audio With Caption ${prefix + command}`)
             reply(mess.wait)
@@ -2066,7 +2240,7 @@ break
 							})
 						})
 					break
-            case 'mp3': {
+            case 'l': {
             if (/video/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Convert Into MP3 With Caption ${prefix + command}`)
             if (!/video/.test(mime) && !/audio/.test(mime)) return replay(`Send/Reply Video/Audio You Want To Convert into MP3 With Caption ${prefix + command}`)
             if (!quoted) return replay(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
@@ -2087,7 +2261,7 @@ break
             Alena.sendMessage(m.chat, {audio: audio, mimetype:'audio/mpeg', ptt:true }, {quoted:m})
             }
             break
-            case 'togif': {
+            case 'gif': {
                 if (!quoted) return reply(`Reply Image`)
                 if (!/webp/.test(mime)) return reply(`Reply Sticker With Caption *${prefix + command}*`)
                 reply(mess.wait)
@@ -2185,7 +2359,7 @@ break
         })
         }
         break
-	    case 'play': case 'song': case 'ytplay': {
+	    case 'play': case 'https://youtu.be': case 'ytplay': {
                 if (!text) return reply(`Example : ${prefix + command} Stay`)
                 let yts = require("yt-search")
                 let search = await yts(text)
@@ -2966,7 +3140,7 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
 	    }
 	    break
 	    case 'addbgm':
-	    if (!isCreator && !mek.key.fromMe) return reply(mess.only.owner)
+	    if (!isCreator) return replay(`${mess.owner}`)
 		if (!isQuotedAudio) return reply('𝚁𝚎𝚙𝚕𝚢 𝚝𝚘 𝙰𝚞𝚍𝚒𝚘')
 		nm = body.slice(7)
 		if (!nm) return reply('𝚆𝚑𝚊𝚝 𝚒𝚜 𝚋𝚐𝚖 𝚗𝚊𝚖𝚎?')
