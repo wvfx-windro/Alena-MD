@@ -208,7 +208,7 @@ key: {
 				"product": {
 					"productImage":{
 						"mimetype": "image/jpeg",
-						"jpegThumbnail": dfrply //Gambarnye
+						"jpegThumbnail": fs.readFileSync('alena.jpg'), //Gambarnye
 					},
 					"title": `${tampilUcapan} ${pushname}`, //Kasih namalu 
 					"description": `${tampilUcapan} ${pushname}`, 
@@ -233,7 +233,7 @@ const ftrol = {
                             surface : 1,
                             message: `${tampilUcapan} ${pushname}`, //Kasih namalu
                             orderTitle: `${tampilUcapan} ${pushname}`,
-                            thumbnail: dfrply, //Gambarnye
+                            thumbnail: fs.readFileSync('alena.jpg'),, //Gambarnye
                             sellerJid: '0@s.whatsapp.net' 
                           }
                         }
@@ -246,7 +246,7 @@ const floc = {
        message: {
                     liveLocationMessage: {
                     caption: `${tampilUcapan} ${pushname}`,
-                    jpegThumbnail: dfrply
+                    jpegThumbnail: fs.readFileSync('alena.jpg'),
                           }
                         }
                       }
@@ -258,7 +258,7 @@ const fdoc = {
        message: {
                     documentMessage: {
                     title: `${tampilUcapan} ${pushname}`, 
-                    jpegThumbnail: dfrply
+                    jpegThumbnail: fs.readFileSync('alena.jpg'),
                           }
                         }
                       }
@@ -275,7 +275,7 @@ const fvid = {
                  "h": `${tampilUcapan} ${pushname}`,
                  'duration': '99999', 
                  'caption': `${tampilUcapan} ${pushname}`,
-                 'jpegThumbnail': dfrply
+                 'jpegThumbnail': fs.readFileSync('alena.jpg'),
                         }
                        }
 	                  }
@@ -292,7 +292,7 @@ const finv = {
 			"inviteCode": `${tampilUcapan} ${pushname}`,
 			"groupName": `${tampilUcapan} ${pushname}`, 
             "caption": `${tampilUcapan} ${pushname}`, 
-            'jpegThumbnail': dfrply
+            'jpegThumbnail': fs.readFileSync('alena.jpg'),
 		}
 	}
 }
@@ -307,7 +307,7 @@ const fstick = {
     "message": {
       "stickerMessage": {
         "fileSha256": "uZiOJzqOvrOo2WGjnMKgX2MMQMyasT+ZDgqUczpIBmY=",
-		"pngThumbnail": dfrply,
+		"pngThumbnail": fs.readFileSync('alena.jpg'),,
 	 "mimetype": "image/webp",
         "height": 64,
         "width": 64,
@@ -334,7 +334,7 @@ const fgi = {
                  'duration': '99999', 
                  'gifPlayback': 'true', 
                  'caption': `${tampilUcapan} ${pushname}`,
-                 'jpegThumbnail': dfrply
+                 'jpegThumbnail': fs.readFileSync('alena.jpg'),
                         }
                        }
 	                  } 
@@ -349,7 +349,7 @@ const ftex = {
 		"extendedTextMessage": {
                  "text": `${tampilUcapan} ${pushname}`,
                  "title": `${tampilUcapan} ${pushname}`,
-                 'jpegThumbnail': dfrply
+                 'jpegThumbnail': fs.readFileSync('alena.jpg'),
                         }
 	                  } 
                      }
@@ -1832,7 +1832,7 @@ buttons: gbutsan,
 headerType: 4
 }
 Alena.sendMessage(from, buttonMessages, MessageType.buttonsMessage, {
-        thumbnail: fs.readFileSync('./alena.jpg'),
+        thumbnail: fs.readFileSync('alena.jpg'),
         "contextInfo": {
             mentionedJid: [otod]},
         caption: 'Tes',
