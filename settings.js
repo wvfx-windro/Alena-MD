@@ -69,6 +69,7 @@ fs.watchFile(file, () => {
 //HEROKU  VARS
 global.thumburl = process.env.IMAGE || 'img url'
 global.packname = process.env.PACKNAME ||'ᴀʟᴇɴᴀ-ᴍᴅ'
+global.myweb = process.env.INSTA_LINK ||'https://instagram.com/'
 global.author = process.env.AUTHOR ||'ʏᴏᴜʀ ɴᴀᴍᴇ'
 global.name = 'ALENA MULTI-DEVICE'
 global.session = process.env.SESSION_ID|| ''
