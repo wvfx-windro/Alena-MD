@@ -5,7 +5,11 @@
   "logo": "https://telegra.ph/file/4c2c0174e86ac3bac2ba8.jpg",
   "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
    "env": {
-    "AUTHOR": {
+"SESSION_ID": {
+    "description": "The session ID you Recieved",
+    "required": true
+    },
+"AUTHOR": {
     "description": "Author Of sticker",
     "required": false
 },
