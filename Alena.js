@@ -3519,6 +3519,14 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 Alena.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
 break
+case 'insta': case 'instagram':
+let instagram = require('../plugins/instagram')
+instagram(M, q, sendFile, prefix, Alena)
+break
+case 'ig':
+let igstalk = require('../plugins/igstalk')
+igstalk(q, textImg, sendFile, sendMess, M)
+break
 case 'mforward':
 					Alena.updatePresence(from, Presence.composing)
 					if (!isCreator) return reply(mess.only.owner)
