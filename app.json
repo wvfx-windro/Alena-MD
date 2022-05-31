@@ -20,11 +20,11 @@
 "INSTA_LINK": {
   "description": "Enter Your Insta User Name",
   "required":false
+  "value": "https://instagram.com/"
 },
 "WATERMARK": {
   "description": "Watermark For Buttons",
   "required": true
-  "value": "https://instagram.com/"
 },
 "BOT_NAME": {
   "description": "BOT NAME",
