@@ -24,6 +24,7 @@
 "WATERMARK": {
   "description": "Watermark For Buttons",
   "required": true
+  "value": "917025994178"
 },
 "BOT_NAME": {
   "description": "BOT NAME",
