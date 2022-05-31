@@ -17,6 +17,10 @@
   "description": "Global Image",
   "required":false
 },
+"INSTA_LINK": {
+  "description": "Enter Your Insta User Name",
+  "required":false
+},
 "WATERMARK": {
   "description": "Watermark For Buttons",
   "required": true
