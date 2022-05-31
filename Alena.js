@@ -985,26 +985,6 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
             }
             }
             break
-            case 'chat': {
-                if (!isCreator) return replay(`${mess.owner}`)
-                if (!q) return replay(`Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete`)
-                if (args[0] === 'mute') {
-                    Alena.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'unmute') {
-                    Alena.chatModify({ mute: null }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'archive') {
-                    Alena.chatModify({  archive: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'unarchive') {
-                    Alena.chatModify({ archive: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'read') {
-                    Alena.chatModify({ markRead: true }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'unread') {
-                    Alena.chatModify({ markRead: false }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                } else if (args[0] === 'delete') {
-                    Alena.chatModify({ clear: { message: { id: m.quoted.id, fromMe: true }} }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-                }
-            }
-            break
 	    case 'family100': {
                 if ('family100'+m.chat in _family100) {
                     reply('There Are Still Unfinished Sessions!')
