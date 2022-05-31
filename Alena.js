@@ -2029,7 +2029,6 @@ break
 					if (args.length < 2) return Alena.sendMessage(from, `Teksnya mana kak? contoh : ${prefix}tts id yamate kudasai`, text, { quoted: mek })
 					var bby = body.slice(8)
 					ranm = getRandom('.mp3')
-					rano = getRandom('.ogg')
 					bby.length > 300
 						? reply('Text is too long')
 						: gtts.save(ranm, bby, function () {
@@ -2042,7 +2041,7 @@ break
 							})
 						})
 					break
-            case 'l': {
+            case 'hl': {
             if (/video/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Convert Into MP3 With Caption ${prefix + command}`)
             if (!/video/.test(mime) && !/audio/.test(mime)) return replay(`Send/Reply Video/Audio You Want To Convert into MP3 With Caption ${prefix + command}`)
             if (!quoted) return replay(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
@@ -2161,55 +2160,33 @@ break
         })
         }
         break
-        case 'play': case 'song': {
-                if (!text) throw `Example : ${prefix + command} bts boy with luv`
+        case 'play': case 'song': case 'ytplay': {
+                if (!text) return reply(`Example : ${prefix + command} Stay`)
                 let yts = require("yt-search")
                 let search = await yts(text)
-                let anu = search.videos[Math.floor(Math.random() * search.videos.length)]               
-                image: { url: anu.thumbnail },
+                let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
+                let buttons = [
+                    {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: '𝙰𝚄𝙳𝙸𝙾🎶'}, type: 1},
+                    {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: '𝚅𝙸𝙳𝙴𝙾📽️'}, type: 1}
+                ]
+                let buttonMessage = {
+                    image: { url: anu.thumbnail },
                     caption: `
-𒆜  𝑻𝑰𝑻𝑳𝑬 : ${anu.title}
-𒆜  𝑬𝑿𝑻 : Search
-𒆜  𝑰𝑫 : ${anu.videoId}
-𒆜  𝑺𝑰𝒁𝑬 : ${anu.timestamp}
-𒆜  𝑽𝑰𝑬𝑾𝑬𝑺 : ${anu.views}
-𒆜  𝑼𝑷𝑳𝑶𝑨𝑫𝑬𝑫 𝑫𝑨𝑻𝑬 : ${anu.ago}
-𒆜  𝑨𝑼𝑻𝑯𝑶𝑹 : ${anu.author.name}
-𒆜  𝑪𝑯𝑨𝑵𝑵𝑬𝑳 : ${anu.author.url}
-𒆜  𝑫𝑬𝑺𝑪𝑹𝑰𝑷𝑻𝑰𝑶𝑵 : ${anu.description}
-𒆜  𝑼𝑹𝑳 : ${anu.url}`,
-`
-message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { upload:   Alena.waUploadToServer })
-                template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-                    templateMessage: {
-                        hydratedTemplate: {
-                            imageMessage: message.imageMessage,
-                            hydratedContentText: ngen,
-                            hydratedFooterText: `Playing To ${text}`,
-                            hydratedButtons: [{
-                                urlButton: {
-                                    displayText: '! 𝚅𝙸𝙳𝙴𝙾 𝙻𝙸𝙽𝙺 !',
-                                    url: `${anu.url}`
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: '! 𝙰𝚄𝙳𝙸𝙾🎵',
-                                    id: `ytmp3 ${anu.url} 320kbps`
-                                    }
-                                },{quickReplyButton: {
-                                    displayText: '! 𝚅𝙸𝙳𝙴𝙾🎥',
-                                    id: `ytmp4 ${anu.url} 360p`
-                                     }
-                                }, {
-                                quickReplyButton: {
-                                    displayText: '! 𝚅𝙸𝙳𝙴𝙾 𝙵𝚄𝙻𝙻 𝙳𝙴𝚃𝙸𝙰𝙻 !',
-                                    id: `getmusic ${anu.url} 320kbps`
-                                    }
-                            }]
-                        }
-                    }
-                }), { userJid: m.chat, quoted: m })
-                  Alena.relayMessage(m.chat, template.message, { messageId: template.key.id })
+𒆜  𝐓𝐈𝐓𝐋𝐄 : ${anu.title}
+𒆜  𝐄𝐗𝐓 : Search
+𒆜  𝐈𝐃 : ${anu.videoId}
+𒆜  𝐒𝐈𝐙𝐄 : ${anu.timestamp}
+𒆜  𝐕𝐈𝐄𝐖𝐄𝐒 : ${anu.views}
+𒆜  𝐔𝐏𝐋𝐎𝐀𝐃 𝐃𝐀𝐓𝐄 : ${anu.ago}
+𒆜  𝐀𝐔𝐓𝐇𝐎𝐑 : ${anu.author.name}
+𒆜  𝐂𝐇𝐀𝐍𝐍𝐄𝐋 : ${anu.author.url}
+𒆜  𝐃𝐄𝐒𝐂𝐑𝐈𝐏𝐓𝐈𝐎𝐍 : ${anu.description}
+𒆜  𝐔𝐑𝐋 : ${anu.url}`,
+                    footer: AbuInc.user.name,
+                    buttons: buttons,
+                    headerType: 4
+                }
+                AbuInc.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
 	    case 'ytmp3': case 'getmusic': case 'ytaudio': {
@@ -2218,8 +2195,8 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                Alena.sendImage(m.chat, media.thumb, `𒆜  𝐓𝐈𝐓𝐋𝐄 : ${media.title}\n𒆜  𝐒𝐈𝐙𝐄 : ${media.filesizeF}\n𒆜  𝐋𝐈𝐍𝐊 : ${isUrl(text)}\n𒆜  𝐄𝐗𝐓 : MP3\n𒆜  𝐑𝐄𝐒𝐎𝐋𝐎𝐓𝐈𝐎𝐍 : ${args[1] || '320kbps'}`, m)
-                Alena.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
+                AbuInc.sendImage(m.chat, media.thumb, `𒆜  𝚃𝙸𝚃𝙻𝙴 : ${media.title}\n𒆜  𝚂𝙸𝚉𝙴 : ${media.filesizeF}\n𒆜  𝙻𝙸𝙽𝙺 : ${isUrl(text)}\n𒆜  𝙴𝚇𝚃 : MP3\n𒆜  𝚁𝙴𝚂𝙾𝙻𝙾𝚃𝙸𝙾𝙽 : ${args[1] || '320kbps'}`, m)
+                AbuInc.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
             case 'ytmp4': case 'getvideo': case 'ytvideo': {
@@ -2228,7 +2205,7 @@ message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { uplo
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                Alena.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `𒆜  𝐓𝐈𝐓𝐋𝐄 : ${media.title}\n𒆜  𝐒𝐈𝐙𝐄 : ${media.filesizeF}\n𒆜  𝐋𝐈𝐍𝐊 : ${isUrl(text)}\n𒆜  𝐄𝐗𝐓 : MP3\n𒆜  𝐑𝐄𝐒𝐎𝐋𝐎𝐓𝐈𝐎𝐍 : ${args[1] || '360p'}` }, { quoted: m })
+                AbuInc.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `𒆜  𝚃𝙸𝚃𝙻𝙴 : ${media.title}\n𒆜  𝚂𝙸𝚉𝙴 : ${media.filesizeF}\n𒆜  𝙻𝙸𝙽𝙺 : ${isUrl(text)}\n𒆜  𝙴𝚇𝚃 : MP3\n𒆜  𝚁𝙴𝚂𝙾𝙻𝙾𝚃𝙸𝙾𝙽 : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
 	    case 'getmusic': {
