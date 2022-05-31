@@ -1294,13 +1294,7 @@ Alena.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}
 case 'tobc':
 				if (!isCreator) return replay(`${mess.owner}`)
 				if (args.length < 1) return reply('𝚃𝙴𝚇𝚃?')
-				var bc = body.slice(6)
-					Alena.updatePresence(from, Presence.composing)
-					anu = await Alena.chats.all()
-					if (isMedia && !mek.message.videoMessage || isQuotedAudio) {
-						const encmedia = isQuotedAudio ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-						buff = await Alena.downloadMediaMessage(encmedia)
-						for (let _ of anu) {
+				var bc = body.slice(6
 							Alena.sendMessage(_.jid, buff, audio, { quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})}, message: { orderMessage: { itemCount: 9999999999, status: 200, thumbnail: fs.readFileSync('alena.jpg'), surface: 200, message: `${bc}`, orderTitle: `${bc}`, sellerJid: '0@s.whatsapp.net'}}}, contextInfo: { forwardingScore: 508, isForwarded: true}, mimetype: 'audio/mp4', duration: 7356663773663, ptt: true })
 						}
 						} else if (isMedia && !mek.message.videoMessage || isQuotedSticker) {
@@ -1483,7 +1477,7 @@ let teks = `╚»˙·٠•●♥ ᴛᴀɢ ᴀʟʟ ♥●•٠·˙«╝
                 reply(teks)
 	    }
 	    break
-               case 'vote': {
+            case 'vote': {
             if (!m.isGroup) return replay(`${mess.group}`)
             if (m.chat in vote) replay(`_There Are Still Votes In This Chat!_\n\n*${prefix}delvote* - To Delete Vote Session`)
             if (!text) return replay(`Enter Reason For Vote, Example: *${prefix + command} Handsome Owner*`)
@@ -1609,72 +1603,6 @@ ${vote[m.chat][2].map((v, i) => `┃╠ ${i + 1}. @${v.split`@`[0]}`).join('\n')
             Alena.sendMessage(m.chat, buttonMessageDevote)
 	}
             break
-            case 'help':
-if(menusimpel == false){
-stst = await Alena.getStatus(`${sender.split('@')[0]}@c.us`)
-				stst = stst.status == 401 ? '' : stst.status
-			num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
-fill =`𝙷𝚒 𝙱𝚛𝚘 ${pushname}, ${tampilUcapan}
-𝙿𝚕𝚎𝚊𝚜𝚎 𝚜𝚎𝚕𝚎𝚌𝚝 𝚜𝚑𝚘𝚠𝚒𝚗𝚐 𝚖𝚎𝚗𝚞
-
-If the button doesnt appear, type .allmenu
-`
-menu =`ꪶ𝑨𝑩𝑼⇥𝑴𝑫ꫂ⁩`
-gbutsan = [
-{buttonId:`allmenu`,buttonText:{displayText:'𝙼𝙴𝙽𝚄!'},type:1},
-{buttonId:`owner`,buttonText:{displayText:'𝙾𝚆𝙽𝙴𝚁!'},type:1},
-{buttonId:`script`,buttonText:{displayText:'𝙶𝙸𝚃'},type:1}
-]
-mhan = await Alena.prepareMessage(from, ofrply, image, {thumbnail: ofrply})
-const buttonMessages = {
-imageMessage: mhan.message.imageMessage,
-contentText: `${fill}`,
-footerText: `${menu}`,
-buttons: gbutsan,
-headerType: 4
-}
-Alena.sendMessage(from, buttonMessages, MessageType.buttonsMessage, {
-        thumbnail: fs.readFileSync('alena.jpg'),
-        "contextInfo": {
-            mentionedJid: [otod]},
-        caption: 'Tes',
-            quoted: ftok})
-}
-else if(menusimpel = true){
-   stst = await Alena.getStatus(`${sender.split('@')[0]}@c.us`)
-				stst = stst.status == 401 ? '' : stst.status
-			num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
-data = fs.readFileSync('./lib/logo.js');
-jsonData = JSON.parse(data);
-randIndex = Math.floor(Math.random() * jsonData.length);
-randKey = jsonData[randIndex];
-gambar = await getBuffer(randKey.result)
-   menu = `*𝙷𝚎𝚕𝚕𝚘 ${pushname}*
-*If the button is not there*
-*𝚃𝚢𝚙𝚎 .allmenu*
-
-𝙱𝙾𝚃-𝙸𝙽𝙵𝙾
-✍ 𝙾𝚆𝙽𝙴𝚁 : @${otod.split('@')[0]}
-✍ 𝙱𝙰𝚃𝚃𝙴𝚁𝚈 : ${baterai.battery}
-✍ 𝙼𝙾𝙳𝙴 : ${publik ? 'Public' : 'Self'}
-✍ 𝙿𝚁𝙴𝙵𝙸𝚇 : ${multi ? 'Multi Prefix' : 'No Prefix'}
-✍ 𝚃𝙾𝚃𝙰𝙻 𝙷𝙸𝚃: ${cmhit.length}
-
-𝚃𝙸𝙼𝙴-𝙸𝙽𝙵𝙾
-☯ ${tampilUcapan} ${pushname}
-☯ 𝚃𝙸𝙼𝙴 : ${timeWib}
-☯ 𝚃𝙸𝙼𝙴 : ${timeWita}
-☯ 𝚃𝙸𝙼𝙴 : ${timeWit}  
-☯ 𝙳𝙰𝚈 : ${week} ${weton}
-☯ 𝙳𝙰𝚃𝙴 : ${calender}`
-sendButLocation(from, `${menu}`, "𝐀𝐁𝐔⇥𝐌𝐃", {jpegThumbnail:gambar,name:""}, [
-{buttonId:`allmenu`,buttonText:{displayText:'ᴍᴇɴᴜ'},type:1},
-{buttonId:`owner`,buttonText:{displayText:'ᴏᴡɴᴇʀ'},type:1},
-{buttonId:`script`,buttonText:{displayText:'ɢɪᴛʜᴜʙ'},type:1}
-], {contextInfo: { mentionedJid: [otod]}})
-}
-           	break
-                 
 case 'checkvote':
 if (!m.isGroup) return replay(`${mess.group}`)
 if (!(m.chat in vote)) return replay(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
@@ -2590,22 +2518,6 @@ case 'webtonsearch': case 'webtoon':
                 if (anu.status == false) return reply(anu.message)
                 Alena.sendText(m.chat, `𒆜  *Born :* ${anu.message.tgl_lahir}\n𒆜  *When Challenged :* ${anu.message.kala_tinantang}\n𒆜  *Info :* ${anu.message.info}\n𒆜  *Notes :* ${anu.message.catatan}`, m)
             }
-            break
-            case 'takestick':
-		    case 'take':
-			   if (!isQuotedSticker) return reply(`Reply sticker dengan caption *${prefix}takestick nama|author*`)
-			   ppp = `${args.join(' ')}`
-		       const encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-		   	   const media = await Alena.downloadAndSaveMediaMessage(encmedia, `sticker/${sender}`)
-			   const packname = ppp.split('|')[0]
-			   const author = ppp.split('|')[1]
-			   exif.create(packname, author, `takestick_${sender}`)
-			   exec(`webpmux -set exif sticker/takestick_${sender}.exif sticker/${sender}.webp -o sticker/${sender}.webp`, async (error) => {
-			   if (error) return reply(mess.error.api)
-			   Alena.sendMessage(from, fs.readFileSync(`sticker/${sender}.webp`), sticker, {quoted: mek})
-			   fs.unlinkSync(media)
-			   fs.unlinkSync(`sticker/takestick_${sender}.exif`)
-			})
 			break
             case 'harisangar': case 'taliwangke': {
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
