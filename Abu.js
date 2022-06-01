@@ -131,10 +131,15 @@ let tebaklirik = db.data.game.lirik = []
 let tebaktebakan = db.data.game.tebakan = []
 let vote = db.data.others.vote = []
 
+const isUrl = (url) => {
+return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
+}
+
 module.exports = Abu = async (Abu, m, chatUpdate, store) => {
     try {
         var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
         var budy = (typeof m.text == 'string' ? m.text : '')
+        
         var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
         const isCmd = body.startsWith(prefix)
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
@@ -2068,33 +2073,53 @@ break
         })
         }
         break
-	    case 'play': case 'song': case 'ytplay': {
-                if (!text) return reply(`Example : ${prefix + command} Stay`)
+	    case 'play': case 'song': {
+                if (!text) throw `Example : ${prefix + command} bts boy with luv`
                 let yts = require("yt-search")
                 let search = await yts(text)
                 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
-                let buttons = [
-                    {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: '🇦 🇺 🇩 🇮 🇴 🎶'}, type: 1},
-                    {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: '🇻 🇮 🇩 🇪 🇴 📽️'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: anu.thumbnail },
-                    caption: `
-𒆜  𝐓𝐈𝐓𝐋𝐄 : ${anu.title}
-𒆜  𝐄𝐗𝐓 : Search
-𒆜  𝐈𝐃 : ${anu.videoId}
-𒆜  𝐒𝐈𝐙𝐄 : ${anu.timestamp}
-𒆜  𝐕𝐈𝐄𝐖𝐄𝐒 : ${anu.views}
-𒆜  𝐔𝐏𝐋𝐎𝐀𝐃𝐄𝐃 𝐃𝐀𝐓𝐄 : ${anu.ago}
-𒆜  𝐀𝐔𝐓𝐇𝐎𝐑 : ${anu.author.name}
-𒆜  𝐂𝐇𝐀𝐍𝐍𝐄𝐋 : ${anu.author.url}
-𒆜  𝐃𝐄𝐒𝐂𝐑𝐈𝐏𝐓𝐈𝐎𝐍 : ${anu.description}
-𒆜  𝐋𝐈𝐍𝐊 : ${anu.url}`,
-                    footer: Abu.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                Abu.sendMessage(m.chat, buttonMessage, { quoted: m })
+                    ngen = `
+𒆜 ᴛɪᴛʟᴇ : ${anu.title}
+𒆜 ᴇxᴛ : Search
+𒆜 ɪᴅ : ${anu.videoId}
+𒆜 sɪᴢᴇ : ${anu.timestamp}
+𒆜 ᴠɪᴇᴡᴇʀs : ${anu.views}
+𒆜 ᴜᴘʟᴏᴀᴅᴇᴅ ᴅᴀᴛᴇ : ${anu.ago}
+𒆜 ᴀᴜᴛʜᴏʀ : ${anu.author.name}
+𒆜 ᴄʜᴀɴɴᴇʟ : ${anu.author.url}
+𒆜 ᴅᴇsᴄʀɪᴘᴛɪᴏ  : ${anu.description}
+`
+message = await prepareWAMessageMedia({ image : { url: anu.thumbnail } }, { upload:   Abu.waUploadToServer })
+                template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                    templateMessage: {
+                        hydratedTemplate: {
+                            imageMessage: message.imageMessage,
+                            hydratedContentText: ngen,
+                            hydratedFooterText: `Playing To ${text}`,
+                            hydratedButtons: [{
+                                urlButton: {
+                                    displayText: 'ᴠɪᴅᴇᴏ ʟɪɴᴋ',
+                                    url: `${anu.url}`
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'ᴀᴜᴅɪᴏ🎵',
+                                    id: `ytmp3 ${anu.url} 320kbps`
+                                    }
+                                },{quickReplyButton: {
+                                    displayText: 'ᴠɪᴅᴇᴏ🎥',
+                                    id: `ytmp4 ${anu.url} 360p`
+                                     }
+                                }, {
+                                quickReplyButton: {
+                                    displayText: 'ʏᴏᴜᴛᴜʙ ғɪɴᴅɪɴɢ',
+                                    id: `getmusic ${anu.url} 320kbps`
+                                    }
+                            }]
+                        }
+                    }
+                }), { userJid: m.chat, quoted: m })
+                  Abu.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
             break
 	    case 'ytmp3': case 'getmusic': case 'ytaudio': {
@@ -3309,7 +3334,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '${global.botname',
+                                    displayText: '${m.pushName}',
                                     id: `${prefix}nano`
                                 }
                                 }, {
@@ -3451,10 +3476,6 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
                 }
             }), {})
             Abu.relayMessage(m.chat, template.message, { messageId: template.key.id })
-            }
-            break
-    case 'donasi': case 'donate': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': {
-                Abu.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/6ba2aed566865a068e91f.jpg' }, caption: `*Hi Bro ${m.pushName}*\n\nDonate Me : \n\n𒆜  Fampay : https://telegra.ph/file/6ba2aed566865a068e91f.jpg\n𒆜  Paytm : https://telegra.ph/file/577bd4f28d90ca2c7f369.jpg\n\nIf You Want To Donate, Talk With The Owner First\nwa.me/916909137213 (Click To Contact)` }, { quoted: m })
             }
             break
             case 'sc': case 'git': {
