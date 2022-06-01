@@ -1,10 +1,10 @@
 {
-  "name": "Alena-MD",
-  "description": "whatsapp md bot by Abu",
-  "repository": "https://github.com/Afx-Abu/Alena-MD",
-  "logo": "https://telegra.ph/file/4c2c0174e86ac3bac2ba8.jpg",
+  "name": "ABU-MD",
+  "description": "whatsapp md bot build with nodejs",
+  "repository": "https://github.com/Afx-Abu/ABU-MD",
+  "logo": "https://pbs.twimg.com/media/FO7fojOakAAyYgt?format=jpg&name=900x900",
   "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
-   "env": {
+    "env": {
 "SESSION_ID": {
     "description": "The session ID you Recieved",
     "required": true
@@ -21,13 +21,17 @@
   "description": "Global Image",
   "required":false
 },
-"INSTA_LINK": {
-  "description": "Enter Your Insta User Name",
-  "required":true
+"GIT_LINK": {
+  "description": "Enter Your git link",
+  "required":false
 },
-"WATERMARK": {
-  "description": "Watermark For Buttons",
-  "required": true
+"INSTA_LINK": {
+  "description": "Enter Your insta link",
+  "required":false
+},
+"OWNER_NAME": {
+  "description": "Enter Your Sticker Name",
+  "required":false
 },
 "BOT_NAME": {
   "description": "BOT NAME",
@@ -35,6 +39,7 @@
 }
 
 },
+
   "buildpacks": [
     {
       "url": "heroku/nodejs"

@@ -1,5 +1,5 @@
 {
-  "name": "Alena-MD",
+  "name": "ABU-MD",
   "version": "2.0.0",
   "description": "WhatsApp Using Lib Baileys Multi Device",
   "main": "index.js",
@@ -10,15 +10,15 @@
   "keywords": [
     "termux",
     "whatsapp",
-    "2022",
-    "GojoSatoru",
+    "2021",
+    "wabase-md",
     "base",
     "baileys-md",
     "bot",
     "bot-md",
     "multi-device"
   ],
-  "author": "Afx-Abu",
+  "author": "Afx-Abu.",
   "license": "MIT",
   "dependencies": {
     "@adiwajshing/baileys": "^4.0.1",
@@ -64,10 +64,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Afx-Abu/Alena-MD.git"
+    "url": "git+https://github.com/Afx-Abu/ABU-MD.git"
   },
   "bugs": {
-    "url": "https://github.com/Afx-Abu/Alena-MD/issues"
+    "url": "https://github.com/Afx-Abu/ABU-MD/issues"
   },
-  "homepage": "https://github.com/Afx-Abu/Alena-MD#readme"
+  "homepage": "https://github.com/Afx-Abu/ABU-MD#readme"
 }
