@@ -1,3 +1,9 @@
+  //═══════════════════════════════════════════════════════//
+// ᴛʜɪs ʙᴏᴛ ᴄᴏᴅᴇʀ ᴏɴʟʏ ᴀʙᴜ
+// ʏᴏᴜ ʀᴇ ᴇᴅɪᴛɪɴɢ ᴏʀ ᴄᴏᴘʏɪɴɢ
+// ʏᴏᴜ ᴄʀᴇᴅɪᴛ ʀᴇᴍᴏᴠᴇ ʙᴜᴛ
+// ᴊᴇsᴛ sᴜᴘᴘᴏʀᴛ ᴍᴇ
+//════════════════════════════//
 const fs = require('fs')
   let _limitOrg = JSON.parse(fs.readFileSync('./storage/user/limit.json'))
   let limitAwal = global.limitawal.free

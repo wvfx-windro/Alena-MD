@@ -1,4 +1,10 @@
-  const fs = require('fs')
+  //═══════════════════════════════════════════════════════//
+// ᴛʜɪs ʙᴏᴛ ᴄᴏᴅᴇʀ ᴏɴʟʏ ᴀʙᴜ
+// ʏᴏᴜ ʀᴇ ᴇᴅɪᴛɪɴɢ ᴏʀ ᴄᴏᴘʏɪɴɢ
+// ʏᴏᴜ ᴄʀᴇᴅɪᴛ ʀᴇᴍᴏᴠᴇ ʙᴜᴛ
+// ᴊᴇsᴛ sᴜᴘᴘᴏʀᴛ ᴍᴇ
+//════════════════════════════//
+const fs = require('fs')
   let _monayOrg = JSON.parse(fs.readFileSync('./storage/user/monay.json'))
   let monayAwal = global.limitawal.monayawal
   const addInventoriMonay = (sender) => {
