@@ -1,6 +1,6 @@
 "use strict";
 
-const { default: makeWASocket, BufferJSON, MessageType, MessageOptions, Mimetype, generateWAMessageFromContent, downloadContentFromMessage, proto } = require('@adiwajshing/baileys-md')
+const { default: makeWASocket, BufferJSON, MessageType, MessageOptions, Mimetype, generateWAMessageFromContent, downloadContentFromMessage, proto } = require('@adiwajshing/baileys')
 const axios = require("axios");
 const moment = require('moment-timezone')
 const chalk = require('chalk')
