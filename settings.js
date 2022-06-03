@@ -1,10 +1,3 @@
-//═══════════════════════════════════════════════════════//
-// 𝚃𝙷𝙸𝚂 𝙱𝙶𝙼 𝙱𝙾𝚃 𝙲𝙾𝙳𝙴𝚁 𝙱𝚈 𝙰𝙱𝚄
-// 𝚈𝙾𝚄𝚁 𝙴𝙳𝙸𝚃𝙸𝙽𝙶 𝙾𝚁 𝙲𝙾𝙿𝚈 
-// 𝚈𝙾𝚄 𝙲𝚁𝙴𝙳𝙸𝚃 𝚁𝙴𝙼𝙾𝚅𝙴 𝙱𝚄𝚃
-// 𝙹𝙴𝚂𝚃 𝚂𝙰𝙿𝙿𝙾𝚁𝚃 𝙼𝙴 𝙿𝙻𝚉
-//════════════════════════════//
-
 const fs = require('fs')
 const chalk = require('chalk')
 
@@ -22,15 +15,15 @@ global.APIKeys = {
 global.owner = ['917025994178']
 global.premium = ['917025994178']
 global.ownernomer = '917025994178'
-global.ownername = 'ᴊsʟ-ᴀʙᴜ'
-global.botname = 'ᴀʟᴇɴᴀ-ᴍᴅ'
-global.footer = '© ᴀʟᴇɴᴀ ™.'
-global.ig = 'https://github.com/Afx-Abu'
-global.region = 'India, South India, Kerala'
+global.ownername = 'Jsl-Abu'
+global.botname = 'Alena-MD'
+global.footer = '© Alena ™'
+global.ig = 'https://github.com/DGXeon'
+global.region = 'Kerala'
 global.sc = 'https://github.com/Afx-Abu/Alena-MD'
-global.myweb = 'https://instagram.com/jsl-abu'
-global.packname = 'ᴀʟᴇɴᴀ-ᴍᴅ'
-global.author = 'ᴊsʟ-ᴀʙᴜ'
+global.myweb = 'https://instagram.com/jsl_xr'
+global.packname = 'Alena'
+global.author = 'Alena By Abu'
 global.sessionName = 'session'
 global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
@@ -48,7 +41,7 @@ global.mess = {
 }
     global.limitawal = {
     premium: "Infinity",
-    free: 12,
+    free: 2,
     monayawal: 1000
 }
    global.rpg = {
@@ -59,8 +52,14 @@ global.mess = {
    umpanawal: 5,
    potionawal: 1
 }
-
+//HEROKO VARS
 global.thumb = process.env.IMAGE || 'https://telegra.ph/file/8dcf20551b533dd0739e5.jpg'
+
+function convertToBool(text, fault = 'true') {
+  return text === fault ? true : false;
+}
+
+
 global.flaming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
 global.fluming = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=fluffy-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
 global.flarun = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=runner-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
