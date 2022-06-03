@@ -71,16 +71,3 @@ fs.watchFile(file, () => {
 	delete require.cache[file]
 	require(file)
 })
-
-global.thumburl = process.env.IMAGE || 'https://telegra.ph/file/8dcf20551b533dd0739e5.jpg'
-global.packname = process.env.PACKNAME ||'ᴀʟᴇɴᴀ-ᴍᴅ'
-global.author = process.env.AUTHOR ||'ᴊsʟ-ᴀʙᴜ'
-global.name = 'ALENA MULTI-DEVICE'
-global.session = process.env.SESSION_ID|| ''
-global.wm = process.env.WATERMARK|| 'ᴀʟᴇɴᴀ-ᴍᴅ'
-global.owner_name = process.env.OWNER_NAME || 'ᴊsʟ-ᴀʙᴜ'
-global.logsmsg = convertToBool(process.env.LOGS)|| false
-
-function convertToBool(text, fault = 'true') {
-  return text === fault ? true : false;
-}
