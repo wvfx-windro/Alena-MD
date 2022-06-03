@@ -5,10 +5,6 @@
   "logo": "https://telegra.ph/file/8dcf20551b533dd0739e5.jpg",
   "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
   "env": {
- "SESSION_ID": {
-    "description": "The session ID you Recieved",
-    "required": true
-    },
 "AUTHOR": {
     "description": "Enter Your Sticker Author Name",
     "required": false
