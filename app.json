@@ -5,21 +5,9 @@
   "logo": "https://telegra.ph/file/8dcf20551b533dd0739e5.jpg",
   "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
   "env": {
-"AUTHOR": {
-    "description": "Enter Your Sticker Author Name",
-    "required": false
-},
-"PACKNAME": {
-  "description": "Enter Your Sticker Pack Name",
-  "required":false
-},
 "IMAGE": {
   "description": "Enter Your Img Url",
   "required":false
-},
-"WATERMARK": {
-  "description": "Watermark For Buttons",
-  "required": true
 },
 "BOT_NAME": {
   "description": "Enter Your Bot Name",
