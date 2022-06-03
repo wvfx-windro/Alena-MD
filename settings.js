@@ -12,18 +12,18 @@ global.APIKeys = {
 }
 
 //customize settings\\
-global.owner = ['917025994178']
-global.premium = ['917025994178']
-global.ownernomer = '917025994178'
-global.ownername = 'Jsl-Abu'
-global.botname = 'Alena-MD'
-global.footer = '© Alena ™'
-global.ig = 'https://github.com/DGXeon'
+global.owner = ['918606413490']
+global.premium = ['918606413490']
+global.ownernomer = '918606413490'
+global.ownername = 'Windro'
+global.botname = 'Null MOdz'
+global.footer = '© Null ™'
+global.ig = 'https://www.instagram.com/ff.wvfx/'
 global.region = 'Kerala'
-global.sc = 'https://github.com/Afx-Abu/Alena-MD'
-global.myweb = 'https://instagram.com/jsl_xr'
-global.packname = 'Alena'
-global.author = 'Alena By Abu'
+global.sc = 'https://github.com/wvfx-windro/Alena-MD'
+global.myweb = 'https://nullmodz.netlify.app/'
+global.packname = 'NULL MODZ'
+global.author = 'Null By Windro'
 global.sessionName = 'session'
 global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
