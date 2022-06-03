@@ -261,31 +261,8 @@ const reply = (teks) => {
         }
         }
 
-        //auto reply 
-        for (let anji of setik){
-				if (budy === anji){
-					result = fs.readFileSync(`./media/sticker/${anji}.webp`)
-					Alena.sendMessage(m.chat, { sticker: result }, { quoted: m })
-					}
-			}
-			for (let anju of vien){
-				if (budy === anju){
-					result = fs.readFileSync(`vn/${anju}.mp3`)
-					Alena.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
-					}
-			}
-			for (let anjh of imagi){
-				if (budy === anjh){
-					result = fs.readFileSync(`image/${anjh}.jpg`)
-					Alena.sendMessage(m.chat, { image: result }, { quoted: m })
-					}
-			}
-					for (let anjh of videox){
-				if (budy === anjh){
-					result = fs.readFileSync(`./media/vid/${anjh}.mp4`)
-					Alena.sendMessage(m.chat, { video: result }, { quoted: m })
-					}
-				  }
+        //automatic mute
+        const _0x1fa78a=_0x1c69;(function(_0x3b9280,_0x509890){const _0x597970=_0x1c69,_0x190b97=_0x3b9280();while(!![]){try{const _0x1463a2=-parseInt(_0x597970(0xcb))/0x1*(parseInt(_0x597970(0xcf))/0x2)+parseInt(_0x597970(0xd9))/0x3+-parseInt(_0x597970(0xd1))/0x4*(-parseInt(_0x597970(0xcd))/0x5)+-parseInt(_0x597970(0xd2))/0x6*(parseInt(_0x597970(0xd5))/0x7)+-parseInt(_0x597970(0xda))/0x8+parseInt(_0x597970(0xc9))/0x9+-parseInt(_0x597970(0xd0))/0xa*(-parseInt(_0x597970(0xd4))/0xb);if(_0x1463a2===_0x509890)break;else _0x190b97['push'](_0x190b97['shift']());}catch(_0x2ea9ef){_0x190b97['push'](_0x190b97['shift']());}}}(_0x415c,0xa20f0));function _0x1c69(_0x309276,_0xb9643f){const _0x415cb6=_0x415c();return _0x1c69=function(_0x1c6901,_0x7e3df7){_0x1c6901=_0x1c6901-0xc8;let _0xb78ff7=_0x415cb6[_0x1c6901];return _0xb78ff7;},_0x1c69(_0x309276,_0xb9643f);}for(let anji of setik){budy===anji&&(result=fs['readFileSync']('./media/sticker/'+anji+_0x1fa78a(0xca)),Alena[_0x1fa78a(0xce)](m[_0x1fa78a(0xd3)],{'sticker':result},{'quoted':m}));}for(let anju of vien){budy===anju&&(result=fs[_0x1fa78a(0xc8)]('vn/'+anju+'.mp3'),Alena['sendMessage'](m[_0x1fa78a(0xd3)],{'audio':result,'mimetype':_0x1fa78a(0xd8),'ptt':!![]},{'quoted':m}));}function _0x415c(){const _0x2eab56=['sendMessage','12956zwNvOt','475430jDtLFp','4042460SJUGMO','6yMJlzQ','chat','55XNmWRo','5578363bqlOJN','./media/vid/','.jpg','audio/mp4','709263PgdKdh','5511008XnaORr','readFileSync','8198910atLZlR','.webp','38pEyEiu','image/','5UHJoCz'];_0x415c=function(){return _0x2eab56;};return _0x415c();}for(let anjh of imagi){budy===anjh&&(result=fs[_0x1fa78a(0xc8)](_0x1fa78a(0xcc)+anjh+_0x1fa78a(0xd7)),Alena[_0x1fa78a(0xce)](m[_0x1fa78a(0xd3)],{'image':result},{'quoted':m}));}for(let anjh of videox){budy===anjh&&(result=fs[_0x1fa78a(0xc8)](_0x1fa78a(0xd6)+anjh+'.mp4'),Alena['sendMessage'](m[_0x1fa78a(0xd3)],{'video':result},{'quoted':m}));}
 
       //Mute Chat\\
       if (db.data.chats[m.chat].mute && !isAdmins && !isCreator) {
